@@ -231,7 +231,7 @@
     <button type="button" class="publish-btn secondary" id="publish-token">设置 GitHub Token</button>
     <button type="button" class="publish-btn" id="publish-github" data-publish-ready="1" disabled="">一键发布只读版</button>
     <span id="publish-hint" class="">正在生成只读快照并上传到 GitHub...</span>
-  </div><div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-06-17 14:18。</div>
+  </div><div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-06-17 14:29。</div>
 
   <section id="today-section" class="collapsible">
     <h2>📌 今日事项 <span class="prog" id="today-prog">今日 0 项</span></h2>
@@ -409,7 +409,10 @@
   <footer>Dino English V1.2.0 · 纯客户端 · 6.26 晚提测 / 6.30 提审 · 已拆三连负载 · 生成于 2026-06-13 · 工作量粗估待负责人确认</footer>
 
 </div>
-<script>(function(){\n  window.__DINO_READONLY=true;\n  window.__DINO_PUBLISHED_AT="2026-06-17 14:18";\n  var publishedState={
+<script>(function(){
+  window.__DINO_READONLY=true;
+  window.__DINO_PUBLISHED_AT="2026-06-17 14:29";
+  var publishedState={
   "dino_collapsed_v1": "[]",
   "dino_feat_date_v2": "{\"0\":{\"ios\":{\"test\":\"2026-06-26\"},\"and\":{\"test\":\"2026-06-26\"}},\"1\":{\"ios\":{\"test\":\"2026-06-25\"},\"and\":{\"test\":\"2026-06-25\"}},\"2\":{\"ios\":{\"test\":\"2026-06-25\"},\"and\":{\"test\":\"2026-06-25\"}},\"3\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-23\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-23\"}},\"5\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"}},\"6\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"}},\"7\":{\"ios\":{\"test\":\"2026-06-24\"},\"and\":{\"test\":\"2026-06-24\"}},\"8\":{\"ios\":{\"test\":\"2026-06-24\"},\"and\":{\"test\":\"2026-06-24\"}},\"9\":{\"ios\":{\"test\":\"2026-06-22\"},\"and\":{\"test\":\"2026-06-22\"}},\"10\":{\"ios\":{\"test\":\"2026-06-25\",\"start\":\"2026-06-17\"},\"and\":{\"test\":\"2026-06-25\",\"start\":\"2026-06-17\"}}}",
   "dino_pre_done_v1": "[]",
@@ -418,7 +421,16 @@
   "dino_status_v1": "{\"i6\":\"未开始\"}",
   "dino_early_done_v1": "[]",
   "dino_status_reason_v1": "{}"
-};\n  var originalGetItem=Storage.prototype.getItem;\n  var originalSetItem=Storage.prototype.setItem;\n  var originalRemoveItem=Storage.prototype.removeItem;\n  Storage.prototype.getItem=function(key){key=String(key);if(key.indexOf("dino_")===0){return Object.prototype.hasOwnProperty.call(publishedState,key)?publishedState[key]:null;}return originalGetItem.call(this,key);};\n  Storage.prototype.setItem=function(key,value){key=String(key);if(key.indexOf("dino_")===0)return;return originalSetItem.call(this,key,value);};\n  Storage.prototype.removeItem=function(key){key=String(key);if(key.indexOf("dino_")===0)return;return originalRemoveItem.call(this,key);};\n  document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".stsel,input.adt,.streason").forEach(function(el){el.disabled=true;});});\n})();</script><script>
+};
+  try{
+    Object.keys(publishedState).forEach(function(key){
+      localStorage.setItem(key,publishedState[key]);
+    });
+  }catch(e){}
+  document.addEventListener("DOMContentLoaded",function(){
+    document.querySelectorAll(".stsel,input.adt,.streason").forEach(function(el){el.disabled=true;});
+  });
+})();</script><script>
 (function(){
   var PRES = [
     {name:'PRD 冻结 + 评审会', date:'2026-06-18', owner:'产品'},
@@ -1129,18 +1141,21 @@
     ].join('\n');
   }
   function readonlyBootScript(state,at){
-    return '(function(){\\n'
-      +'  window.__DINO_READONLY=true;\\n'
-      +'  window.__DINO_PUBLISHED_AT='+JSON.stringify(at)+';\\n'
-      +'  var publishedState='+JSON.stringify(state,null,2)+';\\n'
-      +'  var originalGetItem=Storage.prototype.getItem;\\n'
-      +'  var originalSetItem=Storage.prototype.setItem;\\n'
-      +'  var originalRemoveItem=Storage.prototype.removeItem;\\n'
-      +'  Storage.prototype.getItem=function(key){key=String(key);if(key.indexOf("dino_")===0){return Object.prototype.hasOwnProperty.call(publishedState,key)?publishedState[key]:null;}return originalGetItem.call(this,key);};\\n'
-      +'  Storage.prototype.setItem=function(key,value){key=String(key);if(key.indexOf("dino_")===0)return;return originalSetItem.call(this,key,value);};\\n'
-      +'  Storage.prototype.removeItem=function(key){key=String(key);if(key.indexOf("dino_")===0)return;return originalRemoveItem.call(this,key);};\\n'
-      +'  document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".stsel,input.adt,.streason").forEach(function(el){el.disabled=true;});});\\n'
-      +'})();';
+    return [
+      '(function(){',
+      '  window.__DINO_READONLY=true;',
+      '  window.__DINO_PUBLISHED_AT='+JSON.stringify(at)+';',
+      '  var publishedState='+JSON.stringify(state,null,2)+';',
+      '  try{',
+      '    Object.keys(publishedState).forEach(function(key){',
+      '      localStorage.setItem(key,publishedState[key]);',
+      '    });',
+      '  }catch(e){}',
+      '  document.addEventListener("DOMContentLoaded",function(){',
+      '    document.querySelectorAll(".stsel,input.adt,.streason").forEach(function(el){el.disabled=true;});',
+      '  });',
+      '})();'
+    ].join('\n');
   }
   function makeReadonlyHTML(){
     var at=publishedAt();

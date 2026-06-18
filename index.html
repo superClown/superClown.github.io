@@ -247,7 +247,7 @@
     <button type="button" class="publish-btn secondary" id="publish-token">设置 GitHub Token</button>
     <button type="button" class="publish-btn" id="publish-github" data-publish-ready="1" disabled="">一键发布只读版</button>
     <span id="publish-hint" class="">正在生成只读快照并上传到 GitHub...</span>
-  </div><div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-06-18 13:16。</div>
+  </div><div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-06-18 13:18。</div>
 
   <section id="today-section" class="collapsible">
     <h2>📌 今日事项 <span class="prog" id="today-prog">今日 0 项</span></h2>
@@ -427,7 +427,7 @@
 </div>
 <script>(function(){
   window.__DINO_READONLY=true;
-  window.__DINO_PUBLISHED_AT="2026-06-18 13:16";
+  window.__DINO_PUBLISHED_AT="2026-06-18 13:18";
   var publishedState={
   "dino_feat_date_v2": "{\"0\":{\"ios\":{\"test\":\"2026-06-26\"},\"and\":{\"test\":\"2026-06-26\"}},\"1\":{\"ios\":{\"test\":\"2026-06-25\"},\"and\":{\"test\":\"2026-06-25\"}},\"2\":{\"ios\":{\"test\":\"2026-06-25\"},\"and\":{\"test\":\"2026-06-25\"}},\"3\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-23\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-23\"}},\"5\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"}},\"6\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"}},\"7\":{\"ios\":{\"test\":\"2026-06-24\"},\"and\":{\"test\":\"2026-06-24\"}},\"8\":{\"ios\":{\"test\":\"2026-06-24\"},\"and\":{\"test\":\"2026-06-24\"}},\"9\":{\"ios\":{\"test\":\"2026-06-22\"},\"and\":{\"test\":\"2026-06-22\"}},\"10\":{\"ios\":{\"test\":\"2026-06-25\",\"start\":\"2026-06-17\"},\"and\":{\"test\":\"2026-06-25\",\"start\":\"2026-06-17\"}}}",
   "dino_pre_done_v1": "[]",
@@ -1214,6 +1214,9 @@
   }
   function makeReadonlyHTML(){
     var at=publishedAt();
+    try{
+      if(window.__DINO_RENDER_PRE)window.__DINO_RENDER_PRE();
+    }catch(e){}
     var clone=document.documentElement.cloneNode(true);
     clone.querySelector('title').textContent='Dino English V1.2.0 排期时间线（只读发布版）';
     clone.querySelector('body').classList.add('readonly');

@@ -279,9 +279,9 @@
     <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/JuBfwUEX6ih9IOkJW7GjhgBBpbf?table=tblMmuu7npNpcv9P&view=vewYljaxwJ" target="_blank" rel="noopener noreferrer">打开后端任务排期</a>
     <button type="button" class="publish-btn secondary" id="publish-token">设置 GitHub Token</button>
     <button type="button" class="publish-btn" id="publish-local-cmd">复制可靠发布命令</button>
-    <span id="publish-hint">发布命令会基于磁盘源 HTML 生成，并输出一个不走旧缓存的时间戳链接</span>
+    <span id="publish-hint">发布命令会基于磁盘源 HTML 生成，并校验 GitHub Pages 已返回本次发布内容</span>
   </div>
-  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-06-18 23:04。</div>
+  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-06-18 23:05。</div>
 
   <section id="today-section" class="collapsible">
     <h2>📌 今日事项 <span class="prog" id="today-prog"></span></h2>
@@ -514,7 +514,8 @@
 <script>
 (function(){
   window.__DINO_READONLY=true;
-  window.__DINO_PUBLISHED_AT="2026-06-18 23:04";
+  window.__DINO_PUBLISHED_AT="2026-06-18 23:05";
+  window.__DINO_PUBLISH_ID="1781795154129";
   var publishedState={
   "dino_feat_date_v2": "{\"0\":{\"ios\":{\"test\":\"2026-06-26\"},\"and\":{\"test\":\"2026-06-26\"}},\"1\":{\"ios\":{\"test\":\"2026-06-25\"},\"and\":{\"test\":\"2026-06-25\"}},\"2\":{\"ios\":{\"test\":\"2026-06-25\"},\"and\":{\"test\":\"2026-06-25\"}},\"3\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-23\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-23\"}},\"5\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"}},\"6\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"}},\"7\":{\"ios\":{\"test\":\"2026-06-24\"},\"and\":{\"test\":\"2026-06-24\"}},\"8\":{\"ios\":{\"test\":\"2026-06-24\"},\"and\":{\"test\":\"2026-06-24\"}},\"9\":{\"ios\":{\"test\":\"2026-06-22\"},\"and\":{\"test\":\"2026-06-22\"}},\"10\":{\"ios\":{\"test\":\"2026-06-25\",\"start\":\"2026-06-17\"},\"and\":{\"test\":\"2026-06-25\",\"start\":\"2026-06-17\"}}}",
   "dino_pre_done_v1": "[]",

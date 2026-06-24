@@ -143,15 +143,6 @@
   .svc-meta{margin-top:7px;color:#475569;line-height:1.55;}
   .svc-meta b{color:#0f172a;}
   @media (max-width:860px){.svc-card{margin-left:0;}}
-  #early-section .prog{font-size:11.5px;font-weight:700;color:#7c3aed;}
-  #early-section .eg{font-size:11px;font-weight:700;color:#7c3aed;margin:13px 0 5px;letter-spacing:.3px;}
-  .erow{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:8px;margin-bottom:5px;background:#faf5ff;}
-  .erow.done{opacity:.5;background:#f1f5f9;}
-  .erow.done .ename{text-decoration:line-through;}
-  .ebody{flex:1;}
-  .ename{font-weight:600;font-size:12.5px;}
-  .efn{display:inline-block;background:#ede9fe;color:#6d28d9;border-radius:10px;padding:0 7px;font-size:10.5px;font-weight:700;margin-left:4px;}
-  .ewhy{font-size:11.5px;color:#64748b;margin-top:2px;}
   section.collapsible>h2{cursor:pointer;user-select:text;}
   section.collapsible>h2:before{content:'▾';font-size:11px;color:#94a3b8;margin-right:6px;}
   section.collapsible.collapsed>h2:before{content:'▸';}
@@ -276,12 +267,13 @@
   <div class="top-actions">
     <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/Axjzw82cRiHbQTkYvhmjazmkpXf" target="_blank" rel="noopener noreferrer">打开产品需求文档</a>
     <a class="doc-btn" href="https://cyanlee888.github.io/cyan/dino-english/V1.3.0-ui-demo.html" target="_blank" rel="noopener noreferrer">打开产品 Demo</a>
+    <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/P5uVwILRjioftykoWRdjvJ9Apgb" target="_blank" rel="noopener noreferrer">打开接口文档</a>
     <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/JuBfwUEX6ih9IOkJW7GjhgBBpbf?table=tblMmuu7npNpcv9P&view=vewYljaxwJ" target="_blank" rel="noopener noreferrer">打开后端任务排期</a>
     <button type="button" class="publish-btn secondary" id="publish-token">设置 GitHub Token</button>
     <button type="button" class="publish-btn" id="publish-local-cmd">复制可靠发布命令</button>
     <span id="publish-hint">发布命令会基于磁盘源 HTML 生成，并校验 GitHub Pages 已返回本次发布内容</span>
   </div>
-  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-06-22 19:53。</div>
+  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-06-24 10:50。</div>
 
   <section id="today-section" class="collapsible">
     <h2>📌 今日事项 <span class="prog" id="today-prog"></span></h2>
@@ -294,12 +286,6 @@
     <div id="daily-alert"></div>
     <div id="pre-summary"></div>
     <div id="pre-list"></div>
-  </section>
-
-  <section id="early-section" class="collapsible">
-    <h2>🚀 可提前开发清单（6/22 开工前就能动手） <span class="prog" id="early-prog"></span></h2>
-    <div class="teaminfo">以下都<b>不依赖 PRD / 设计图 / 后端接口 / 外部账号</b>，现在（6/13–6/21）就能并行做掉，给 6/22–26 的 6 天窗口减负。点「✓ 已开工」勾选追踪。</div>
-    <div id="early-list"></div>
   </section>
 
   <section id="status-section" class="collapsible">
@@ -514,14 +500,14 @@
 <script>
 (function(){
   window.__DINO_READONLY=true;
-  window.__DINO_PUBLISHED_AT="2026-06-22 19:53";
-  window.__DINO_PUBLISH_ID="1782129234356";
+  window.__DINO_PUBLISHED_AT="2026-06-24 10:50";
+  window.__DINO_PUBLISH_ID="1782269406013";
   var publishedState={
   "dino_feat_date_v2": "{\"0\":{\"ios\":{\"test\":\"2026-06-26\"},\"and\":{\"test\":\"2026-06-26\"}},\"1\":{\"ios\":{\"test\":\"2026-06-25\"},\"and\":{\"test\":\"2026-06-25\"}},\"2\":{\"ios\":{\"test\":\"2026-06-25\"},\"and\":{\"test\":\"2026-06-25\"}},\"3\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-23\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-23\"}},\"5\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"}},\"6\":{\"ios\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"},\"and\":{\"start\":\"2026-06-17\",\"test\":\"2026-06-24\"}},\"7\":{\"ios\":{\"test\":\"2026-06-24\"},\"and\":{\"test\":\"2026-06-24\"}},\"8\":{\"ios\":{\"test\":\"2026-06-24\"},\"and\":{\"test\":\"2026-06-24\"}},\"9\":{\"ios\":{\"test\":\"2026-06-22\"},\"and\":{\"test\":\"2026-06-22\"}},\"10\":{\"ios\":{\"test\":\"2026-06-25\",\"start\":\"2026-06-17\"},\"and\":{\"test\":\"2026-06-25\",\"start\":\"2026-06-17\"}}}",
-  "dino_pre_done_v1": "[\"韩沙阿三国短信通道申请\",\"PRD 冻结 + 评审会\",\"UI 风格化范围拍定（换色 / 精修）\",\"Explore 改名文案提翻译后台\",\"对话 Azure SDK 集成方案 + 跑通 demo\",\"登录·手机号（韩/沙/阿）设计交付\",\"学习计划基础版 + 课程解锁设计交付\",\"游戏+金币（Tab入口）设计交付\",\"首页 Dino 对话入口设计交付\",\"背单词+Radio 合并 Explore + 改名设计交付\",\"UI 风格统一化设计交付\",\"支付升级设计交付\",\"支付升级 · 接口文档\",\"登录·Kakao + Facebook（+拉起 Dino AI） · 接口文档\",\"登录·手机号（韩/沙/阿） · 接口文档\",\"首页 Dino 对话入口 · 接口文档\",\"学习计划基础版 + 课程解锁 · 接口文档\",\"游戏+金币（Tab入口） · 接口文档\",\"Dino的激励体系（背包、商城、换肤） · 接口文档\",\"马甲决议（风格化 / 拉起 Dino AI）\"]",
+  "dino_pre_done_v1": "[\"韩沙阿三国短信通道申请\",\"PRD 冻结 + 评审会\",\"UI 风格化范围拍定（换色 / 精修）\",\"Explore 改名文案提翻译后台\",\"对话 Azure SDK 集成方案 + 跑通 demo\",\"登录·手机号（韩/沙/阿）设计交付\",\"学习计划基础版 + 课程解锁设计交付\",\"游戏+金币（Tab入口）设计交付\",\"首页 Dino 对话入口设计交付\",\"背单词+Radio 合并 Explore + 改名设计交付\",\"UI 风格统一化设计交付\",\"支付升级设计交付\",\"支付升级 · 接口文档\",\"登录·Kakao + Facebook（+拉起 Dino AI） · 接口文档\",\"登录·手机号（韩/沙/阿） · 接口文档\",\"首页 Dino 对话入口 · 接口文档\",\"学习计划基础版 + 课程解锁 · 接口文档\",\"游戏+金币（Tab入口） · 接口文档\",\"Dino的激励体系（背包、商城、换肤） · 接口文档\",\"马甲决议（风格化 / 拉起 Dino AI）\",\"个人中心改版设计交付\"]",
   "dino_early_done_v1": "[]",
   "dino_feat_assign_v1": "{\"1\":{\"ios\":\"付玉佳\",\"and\":\"郭浦然\"},\"5\":{\"ios\":\"燕航·付玉佳\",\"and\":\"郭武鑫·郭浦然\"},\"7\":{\"ios\":\"李佳\",\"and\":\"王俭\"},\"8\":{\"ios\":\"刘亚平\",\"and\":\"李政\"},\"10\":{\"ios\":\"贾宾·王宁宁·李佳\",\"and\":\"沈延涛·杨金鹏·王俭\"}}",
-  "dino_status_v1": "{\"i6\":\"UI开发中\",\"a6\":\"UI开发中\",\"i3\":\"UI开发中\",\"a3\":\"UI开发中\",\"i10\":\"UI开发中\",\"a10\":\"UI开发中\",\"i5\":\"UI开发中\",\"a5\":\"UI开发中\",\"a8\":\"UI开发中\",\"a2\":\"UI开发中\",\"i9\":\"联调中\",\"i7\":\"UI开发中\",\"a7\":\"UI开发中\",\"a9\":\"联调中\",\"a1\":\"UI开发中\"}",
+  "dino_status_v1": "{\"i6\":\"联调中\",\"a6\":\"联调中\",\"i3\":\"已提测\",\"a3\":\"已提测\",\"i10\":\"联调中\",\"a10\":\"联调中\",\"i5\":\"联调中\",\"a5\":\"联调中\",\"a8\":\"联调中\",\"a2\":\"联调中\",\"i9\":\"联调中\",\"i7\":\"联调中\",\"a7\":\"联调中\",\"a9\":\"联调中\",\"a1\":\"UI开发中\",\"i8\":\"联调中\",\"i2\":\"联调中\",\"a0\":\"UI开发中\",\"i0\":\"UI开发中\",\"i1\":\"UI开发中\"}",
   "dino_collapsed_v1": "[]",
   "dino_feat_owner_v1": "{\"0\":\"郭浦然\",\"1\":\"郭浦然\",\"4\":\"杨金鹏\",\"6\":\"魏博源\",\"9\":\"李政\",\"10\":\"沈延涛\"}",
   "dino_status_reason_v1": "{}",
@@ -551,6 +537,7 @@
       {name:'背单词+Radio 合并 Explore + 改名设计交付', date:'2026-06-22', owner:'设计'},
       {name:'UI 风格统一化设计交付', date:'2026-06-24', owner:'设计'},
       {name:'iPad 设计交付', date:'2026-06-24', owner:'设计'},
+      {name:'个人中心改版设计交付', date:'2026-06-24', owner:'设计'},
       {name:'支付升级设计交付', date:'2026-06-24', owner:'设计'}
     ]},
     {name:'马甲决议（风格化 / 拉起 Dino AI）', date:'2026-06-19', owner:'manager'},
@@ -766,46 +753,7 @@
     }
   }
   window.__DINO_RENDER_PRE=render;
-  var EARLY=[
-    {g:'A · 最高价值（关键路径前置，趟通即解锁功能）', name:'接入微软 Azure Speech SDK，跑通最小 ASR+TTS demo', fn:'对话', why:'纯工程：解决 SPM vs CocoaPods、XCFramework binary target 打包；不依赖 PRD/设计/后端，趟通即解锁对话客户端'},
-    {g:'A · 最高价值（关键路径前置，趟通即解锁功能）', name:'从 app-dino-ai 搬对话 UI(Home) + ASR/TTS 封装源码', fn:'对话', why:'现成代码，按本项目规则改造（safeDecode / L10n / Swift6 并发 / weak self）；用 mock 不等后端'},
-    {g:'A · 最高价值（关键路径前置，趟通即解锁功能）', name:'接入 Facebook SDK + Kakao SDK（登录骨架 + 回调）', fn:'登录', why:'SDK 引入、URL scheme、初始化、按钮+回调骨架不等账号；App key 到了再填'},
-    {g:'B · 基建/脚手架（降低后续工作量与风险）', name:'Theme / 设计 token 层：颜色·字体收敛成可统一替换', fn:'UI风格化', why:'设计规范到了改一处即全局生效，大幅降低风格化「全 App 逐页」的量'},
-    {g:'B · 基建/脚手架（降低后续工作量与风险）', name:'H5 游戏容器 + JS Bridge 协议骨架', fn:'游戏Tab入口', why:'复用现有 webContainer 封装游戏容器、定桥接协议；不等游戏 H5 本身'},
-    {g:'B · 基建/脚手架（降低后续工作量与风险）', name:'各功能 Mock 数据 / 假接口层', fn:'全部', why:'支撑「前期 UI 用 mock 不等接口」，真接口 6/25 到了一键切换'},
-    {g:'C · 工程准备（纯工程，越早越好）', name:'dev-1.3.0 清理：付费墙隐藏开关 + 半成品隔离 + 回滚清单', fn:'发版', why:'纯工程，不依赖任何前置；提测前必须先把半成品藏好'},
-    {g:'C · 工程准备（纯工程，越早越好）', name:'Explore 合并脚手架：新 Tab 容器 + 挂入现有 Words / FM', fn:'Explore', why:'整合现有模块的结构可先搭，不等改名文案（文案走翻译后台）'},
-    {g:'C · 工程准备（纯工程，越早越好）', name:'真机/测试环境：iPad 真机 + 19 语言切换 + 沙盒账号 + CI', fn:'全部', why:'6/26 提测前必备，提前搭好不占开发日'}
-  ];
-  var EKEY='dino_early_done_v1';
-  function loadE(){try{return JSON.parse(localStorage.getItem(EKEY)||'[]');}catch(e){return [];}}
-  function saveE(a){try{localStorage.setItem(EKEY,JSON.stringify(a));}catch(e){}}
-  function renderEarly(){
-    var done=loadE();var groups={};var order=[];
-    EARLY.forEach(function(e){if(!groups[e.g]){groups[e.g]=[];order.push(e.g);}groups[e.g].push(e);});
-    var html='';
-    order.forEach(function(g){
-      html+='<div class="eg">'+g+'</div>';
-      groups[g].forEach(function(e){
-        var dn=done.indexOf(e.name)>=0;
-        var btn='<button class="dl-done-btn" data-e="'+encodeURIComponent(e.name)+'">'+(dn?'↩ 撤销':'✓ 已开工')+'</button>';
-        html+='<div class="erow'+(dn?' done':'')+'">'+btn+'<div class="ebody"><div class="ename">'+e.name+' <span class="efn">'+e.fn+'</span></div><div class="ewhy">'+e.why+'</div></div></div>';
-      });
-    });
-    document.getElementById('early-list').innerHTML=html;
-    document.getElementById('early-prog').textContent='已开工 '+done.length+' / '+EARLY.length;
-    var eb=document.querySelectorAll('[data-e]');
-    for(var k=0;k<eb.length;k++){
-      eb[k].onclick=function(){
-        var n=decodeURIComponent(this.getAttribute('data-e'));
-        var d=loadE();var idx=d.indexOf(n);
-        if(idx>=0)d.splice(idx,1);else d.push(n);
-        saveE(d);renderEarly();
-      };
-    }
-  }
   render();
-  renderEarly();
 })();
 (function(){
   var CKEY='dino_collapsed_v1';
@@ -1076,15 +1024,15 @@
       });
     });
     document.getElementById('status-blockers').innerHTML=blk;
-    var sels=document.querySelectorAll('.stsel');
+    var sels=document.querySelectorAll('#status-table .stsel');
     for(var j=0;j<sels.length;j++){
       sels[j].onchange=function(){
-        var o=loadS();o[this.getAttribute('data-k')]=this.value;saveS(o);renderStatus();renderPeopleSchedule();
+        var o=loadS();o[this.getAttribute('data-k')]=this.value;saveS(o);renderAll();
       };
     }
-    var ris=document.querySelectorAll('.streason');
+    var ris=document.querySelectorAll('#status-table .streason');
     for(var m=0;m<ris.length;m++){
-      ris[m].addEventListener('change',function(){var r=loadReasons();r[this.getAttribute('data-rk')]=this.value;saveReasons(r);renderStatus();});
+      ris[m].addEventListener('change',function(){var r=loadReasons();r[this.getAttribute('data-rk')]=this.value;saveReasons(r);renderAll();});
     }
   }
   function genSendCmd(){
@@ -1206,17 +1154,23 @@
   var CN_F=['①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩','⑪','⑫'];
   function renderAssign(){
     var iosPool=effectiveOrder(IOS_ORDER,'ios'),andPool=effectiveOrder(AND_ORDER,'and');
-    var h='<div class="ahint">调整每个功能<b>各端</b>的<b>开发人员</b>与<b>开始 / 提测时间</b>：人员从下拉「＋ 添加」选、点 ✕ 移除；开始 / 提测在每个端后面直接选日期（默认基线 6/22 起、6/26 提测）；<b>标题右侧</b>显示该功能<b>最终（较晚端）提测时间</b>与倒计时。「按人查看任务」与日报<b>自动同步</b>；状态按「功能 × 端」记录，<b>换人不丢状态</b>。</div>';
+    var st=loadS(),rs=loadReasons();
+    var h='<div class="ahint">调整每个功能<b>各端</b>的<b>开发人员</b>、<b>开发状态</b>与<b>开始 / 提测时间</b>：人员从下拉「＋ 添加」选、点 ✕ 移除；<b>状态</b>直接在每端下拉里选（未开始 / UI开发中 / 联调中 / 已提测 / 验收中 / 完成 / 🚩阻塞，选「阻塞」可补原因），与「按人查看任务」、日报<b>实时同步</b>；开始 / 提测在每个端后面直接选日期（默认基线 6/22 起、6/26 提测）；<b>标题右侧</b>显示该功能<b>最终（较晚端）提测时间</b>与倒计时。状态按「功能 × 端」记录，<b>换人不丢状态</b>。</div>';
     FEATS.forEach(function(f,i){
       h+='<div class="afeat"><div class="afn"><span>'+(CN_F[i]||(i+1)+'.')+' '+f.n+'</span>'+titleMetaHTML(i)+'</div>';
       [['ios','iOS',iosPool],['and','Android',andPool]].forEach(function(s){
         var side=s[0],lbl=s[1],pool=s[2],cur=listOf(i,side);
+        var skey=(side==='ios'?'i':'a')+i,scur=st[skey]||'未开始';
         h+='<div class="aside"><span class="asd '+side+'">'+lbl+'</span><div class="achips">';
         if(cur.length===0)h+='<span class="achip none">未分配</span>';
         cur.forEach(function(p){h+='<span class="achip">'+p+'<button class="achip-x" data-i="'+i+'" data-side="'+side+'" data-name="'+p.replace(/"/g,'&quot;')+'" title="移除">✕</button></span>';});
         h+='</div><select class="aadd" data-i="'+i+'" data-side="'+side+'"><option value="">＋ 添加…</option>';
         pool.filter(function(p){return cur.indexOf(p)<0;}).forEach(function(p){h+='<option value="'+p.replace(/"/g,'&quot;')+'">'+p+'</option>';});
-        h+='<option value="__other__">＋ 其他（手动输入）…</option></select>'+dateCellsHTML(i,side)+'</div>';
+        h+='<option value="__other__">＋ 其他（手动输入）…</option></select>';
+        h+='<span class="adl">状态</span><select class="stsel '+SCLS[scur]+'" data-k="'+skey+'" title="开发状态（与「按人查看任务」同步）">'+opts(scur)+'</select>';
+        h+=dateCellsHTML(i,side);
+        if(scur==='🚩阻塞')h+='<input class="streason" data-rk="'+skey+'" value="'+(rs[skey]||'').replace(/"/g,'&quot;')+'" placeholder="阻塞原因…">';
+        h+='</div>';
       });
       h+='</div>';
     });
@@ -1235,6 +1189,10 @@
     for(var c=0;c<dts.length;c++){dts[c].onchange=function(){setDate(+this.getAttribute('data-i'),this.getAttribute('data-side'),this.getAttribute('data-kind'),this.value);renderAll();if(window.__DINO_RENDER_PRE)window.__DINO_RENDER_PRE();};}
     var os=document.querySelectorAll('#status-assign .afowner-sel');
     for(var d=0;d<os.length;d++){os[d].onchange=function(){setOwner(+this.getAttribute('data-i'),this.value);renderAll();};}
+    var ss=document.querySelectorAll('#status-assign .stsel');
+    for(var e=0;e<ss.length;e++){ss[e].onchange=function(){var o=loadS();o[this.getAttribute('data-k')]=this.value;saveS(o);renderAll();};}
+    var rr=document.querySelectorAll('#status-assign .streason');
+    for(var g=0;g<rr.length;g++){rr[g].addEventListener('change',function(){var r=loadReasons();r[this.getAttribute('data-rk')]=this.value;saveReasons(r);renderAll();});}
   }
   function renderAll(){renderStatus();renderAssign();renderPeopleSchedule();renderTodayTasks();}
   window.__DINO_RENDER_ALL=renderAll;
@@ -1301,7 +1259,6 @@
     state.dino_collapsed_v1='[]';
     state.dino_status_tab_v1='feat';
     if(!state.dino_pre_done_v1)state.dino_pre_done_v1='[]';
-    if(!state.dino_early_done_v1)state.dino_early_done_v1='[]';
     if(!state.dino_status_reason_v1)state.dino_status_reason_v1='{}';
     return state;
   }

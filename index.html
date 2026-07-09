@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dino English V1.3.2 排期时间线（只读发布版）</title>
+<title>Dino English V1.4.0 排期时间线（只读发布版）</title>
 <style>
   :root{
     --pre:#f59e0b; --dev:#3b82f6; --link:#14b8a6; --warn:#f59e0b; --no:#ef4444;
@@ -154,6 +154,28 @@
   .sb{font-size:12px;font-weight:700;padding:3px 11px;border-radius:20px;}
   .sb-rd{background:#f3e8ff;color:#7c3aed;} .sb-dn{background:#f0fdf4;color:#16a34a;}
   .sb-bk{background:#fef2f2;color:#dc2626;} .sb-ns{background:#f1f5f9;color:#64748b;}
+  #status-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin:2px 0 12px;}
+  .catcard{border:1px solid #e2e8f0;border-left:4px solid #94a3b8;border-radius:10px;padding:8px 11px;background:#fff;}
+  .catcard.c-paywall{border-left-color:#0ea5e9;} .catcard.c-dino{border-left-color:#3b82f6;}
+  .catcard.c-push{border-left-color:#8b5cf6;} .catcard.c-theme{border-left-color:#f59e0b;} .catcard.c-other{border-left-color:#64748b;}
+  .catcard.has-blk{border-left-color:#ef4444;background:#fef2f2;}
+  .catcard-h{font-weight:800;font-size:12px;color:#0f172a;display:flex;align-items:baseline;justify-content:space-between;gap:6px;flex-wrap:wrap;}
+  .catcard-n{font-size:10px;font-weight:600;color:#94a3b8;}
+  .catcard-bar{height:6px;border-radius:4px;background:#eef2f7;margin:6px 0 5px;overflow:hidden;}
+  .catcard-bar span{display:block;height:100%;background:#22c55e;border-radius:4px;transition:width .2s;}
+  .catcard-m{font-size:11.5px;color:#475569;} .catcard-m b{color:#0f172a;} .catcard-m b.blk{color:#dc2626;}
+  .cat-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:16px 0 8px;padding:6px 12px;border-radius:8px;font-weight:800;font-size:13px;color:#fff;background:#64748b;}
+  .cat-head.c-paywall{background:#0ea5e9;} .cat-head.c-dino{background:#3b82f6;}
+  .cat-head.c-push{background:#8b5cf6;} .cat-head.c-theme{background:#f59e0b;} .cat-head.c-other{background:#64748b;}
+  .cat-head-m{font-size:11px;font-weight:700;background:rgba(255,255,255,.22);padding:2px 9px;border-radius:20px;white-space:nowrap;}
+  .cat-head-r{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+  .cat-owner{font-size:11px;font-weight:700;color:#fff;background:rgba(255,255,255,.22);padding:2px 8px;border-radius:20px;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;}
+  .cat-owner-sel{border:none;border-radius:20px;background:#fff;color:#0f172a;font-size:11px;font-weight:800;padding:1px 6px;cursor:pointer;font-family:inherit;}
+  .catcard-o{font-size:11px;color:#475569;margin:1px 0 5px;}.catcard-o b{color:#0f172a;}
+  #status-assign .cat-head:first-child{margin-top:2px;}
+  .catcard.c-lt{border-left-color:#6366f1;} .cat-head.c-lt{background:#6366f1;}
+  .asd.lt{background:#6366f1;}
+  .lt-note{flex-basis:100%;font-size:11.5px;color:#64748b;line-height:1.5;margin:3px 0 0 12px;}.lt-note b{color:#0f172a;}
   table.st{width:100%;border-collapse:collapse;font-size:12.5px;}
   table.st th{text-align:left;font-size:11px;color:#64748b;background:#f8fafc;padding:6px 8px;border-radius:4px;}
   table.st td{padding:6px 8px;border-bottom:1px solid #eef2f7;}
@@ -248,6 +270,7 @@
   body.readonly #publish-hint{display:none !important;}
   body.readonly .stsel,
   body.readonly .afowner-sel,
+  body.readonly .cat-owner-sel,
   body.readonly input.adt,
   body.readonly .streason{pointer-events:none;background:#f8fafc;color:#475569;cursor:default;}
   body.readonly .achip{padding-right:11px;}
@@ -260,20 +283,21 @@
 <body class="readonly">
 <div class="wrap">
 
-  <h1>Dino English V1.3.2 排期时间线 · 客户端 + 服务端依赖</h1>
+  <h1>Dino English V1.4.0 排期时间线 · 客户端 + 服务端依赖</h1>
   <div class="sub">
-    <b>13 项任务（8 需求 + 4 优化 + 1 新增对话）· 7/7 晚主提测 / 7/8 晚补提测 / 7/9 提审</b>｜7/6（今天）全面启动｜燕航·郭武鑫 7/7 下午介入｜Cursor 辅助｜iOS 5 / Android 6（高焰本版本不支持）｜学习计划宣传页优化已移交前端｜评估日 2026-07-06｜服务端排期 2026-07-07 同步自 Lark「服务端任务管理」
+    <b>10 项客户端任务（转化链路 / Push / 首页 Dino 引导 / 对话付费 / 麦克风 / 热点课 / 埋点）· 7/11 晚主提测 / 7/12 补提测 / 7/13 提审 / 7/15 上线</b>｜7/9（今天）评审+拍板+全面开工｜功能性迭代版（V1.3.2 之上）｜iOS 5 / Android 7（新增 李永祺）｜<b>长期 App 需求（数字人 / 性能 / 重构 / 调研 等）见下方独立板块，不跟版本</b>｜淑怡 = 产品（对话付费）｜评估日 2026-07-09
   </div>
   <div class="top-actions">
-    <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/J3rfw9GA9iFSS2k7glojflQ8pPg" target="_blank" rel="noopener noreferrer">打开产品需求文档</a>
-    <a class="doc-btn" href="https://cyanlee888.github.io/cyan/dino-english/V1.3.2-ui-demo.html" target="_blank" rel="noopener noreferrer">打开产品 Demo</a>
-    <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/P5uVwILRjioftykoWRdjvJ9Apgb" target="_blank" rel="noopener noreferrer">打开接口文档</a>
-    <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/JuBfwUEX6ih9IOkJW7GjhgBBpbf?table=tblMmuu7npNpcv9P&view=vewYljaxwJ" target="_blank" rel="noopener noreferrer">打开后端任务排期</a>
+    <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/CMQLw7imeiIemykJmTgj0cKIpjb" target="_blank" rel="noopener noreferrer">主 PRD（转化/Push/首页Dino）</a>
+    <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/L2fpwh9wmim1tpkHfrXjDXQWpqn" target="_blank" rel="noopener noreferrer">热点课 PRD（世界杯）</a>
+    <a class="doc-btn" href="https://dino-prd-hub.vercel.app/paid/" target="_blank" rel="noopener noreferrer">对话付费引导 PRD</a>
+    <a class="doc-btn" href="https://dino-prd-hub.vercel.app/mic/" target="_blank" rel="noopener noreferrer">麦克风改造 PRD</a>
+    <a class="doc-btn" href="https://cyanlee888.github.io/cyan/dino-english/V1.4.0-ui-demo.html" target="_blank" rel="noopener noreferrer">产品 Demo</a>
     <button type="button" class="publish-btn secondary" id="publish-token">设置 GitHub Token</button>
     <button type="button" class="publish-btn" id="publish-local-cmd">复制可靠发布命令</button>
     <span id="publish-hint">发布命令会基于磁盘源 HTML 生成，并校验 GitHub Pages 已返回本次发布内容</span>
   </div>
-  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-07-07 17:39。</div>
+  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-07-09 19:41。</div>
 
   <section id="today-section" class="collapsible">
     <h2>📌 今日事项 <span class="prog" id="today-prog"></span></h2>
@@ -300,211 +324,186 @@
       <div style="font-size:11px;color:#64748b;margin-top:3px;">↑ 复制后直接粘贴到飞书群发送（已含当前看板的进度数据 + 阻塞原因）</div>
     </div>
     <div id="status-summary"></div>
+    <div id="status-cats"></div>
     <div id="status-blockers"></div>
     <div id="status-tabs">
       <button type="button" class="stab active" data-tab="person">👤 按人查看任务</button>
-      <button type="button" class="stab" data-tab="feat">🔧 按功能 · 变更开发人员</button>
+      <button type="button" class="stab" data-tab="feat">🔧 按大类 · 功能 · 变更开发人员</button>
     </div>
     <div id="status-table"></div>
     <div id="status-assign" style="display:none;"></div>
   </section>
 
-  <section id="qa-section" class="collapsible">
-    <h2>🧪 测试 Owner 与提测节奏 <span class="tag">课中 / 课外主R · 测试范围分工 · 7/7–7/9</span></h2>
+  <section id="qa-section" class="collapsible" style="display:none">
+    <h2>🧪 测试 Owner 与提测节奏 <span class="tag">课中 / 课外主R · 测试范围分工 · 7/11–7/13</span></h2>
     <div class="teaminfo">测试 Owner 负责对应范围的测试跟进、Bug 归属判断和跨端/跨角色对齐；开发 Owner 仍按【开发进度看板】维护。</div>
     <div class="qa-leads">
       <span class="qa-lead"><b>课中主R</b> 桂启剑（guiqijian1）</span>
       <span class="qa-lead"><b>课外主R</b> 徐雪峰</span>
     </div>
     <div class="qa-grid">
-      <div class="qa-card class">
-        <h3>Class tab 升降级 / 课卡</h3>
-        <span class="qa-owner">Owner：桂启剑（guiqijian1） / 郭大违（guodawei） / 张依（zhangyi33）</span>
-        <div class="qa-scope">升降级横幅 / 二次确认弹窗 / 级别卡锁态——附录表 A（M0–M6）/ 表 B（F0–F5）13 态逐条验收；探索引导卡出现与互斥（含服务端路由下发）；完课课卡按钮</div>
-        <div class="qa-map">映射：课程升降级、Class·本周上完探索引导卡、完课后「和 Dino 聊聊」入口、学习路径级别卡显示修复</div>
-      </div>
-      <div class="qa-card class">
-        <h3>定级 / 选老师回归</h3>
-        <span class="qa-owner">Owner：程小艳（chengxiaoyan）</span>
-        <div class="qa-scope">体验课定级链路回归（升降级中的体验课分支）、选老师页对口型资源替换、onboarding 预加载</div>
-        <div class="qa-map">映射：选老师资源优化、课程升降级（体验课链路）</div>
-      </div>
       <div class="qa-card dino">
-        <h3>Pay wall / 背包手办</h3>
+        <h3>转化链路 / Paywall / 折扣挽留</h3>
         <span class="qa-owner">Owner：孙晶（sunjing15）</span>
-        <div class="qa-scope">竖屏 Paywall 全 trigger_source 回归（横屏来源切换 / 支付 / Restore / 划线价）、手办 IP 子 Tab / 系列分组 / 置灰态 / 集齐成就</div>
-        <div class="qa-map">映射：Paywall 竖屏改版、背包手办 IP/系列分层</div>
+        <div class="qa-scope">常规 Paywall 收敛为年+月（周卡不出）；周卡限时折扣页全触点（支付取消 / 返回关闭 Paywall / 每日启动）、15:00 本地倒计时（退后台照常）、划线价 $16.49 / 现价 $10.99 / 33% OFF 折算、Claim/Restore/✕；全局促销频控（挽留与每日启动各每日 1 次互不占用、会员不打扰、当日去重）；支付失败≠取消不进折扣页</div>
+        <div class="qa-map">映射：常规 Paywall 收敛、周卡限时折扣页 + 促销频控、对话上限触点</div>
       </div>
       <div class="qa-card account">
-        <h3>账号 / 登录</h3>
+        <h3>Push 推送 / 授权 / 深链</h3>
         <span class="qa-owner">Owner：庞瑜（pangyu）</span>
-        <div class="qa-scope">Kakao 绑定强制流程（有/无手机号两分支）、验证码频控、去前导 0（后端需兼容 +0 / 不加 0 双格式）、Facebook 登录（授权/取消/账号关联）、loading 双 Dino 与宣传页文案（服务端下发）</div>
-        <div class="qa-map">映射：Kakao 登录手机号绑定、手机号登录去前导 0、Facebook 登录、登录链路展示优化</div>
+        <div class="qa-scope">启动请求系统授权（允许/拒绝/系统设置改动后同步）；<b>登录绑 token、登出解绑</b>、多账号只推当前登录账号 / 多设备全量下发；device_timezone 晚间批次本地化送达；三场景深链（体验课 / 学习计划页 / Class tab）；<b>App 活跃时不弹系统推送横幅</b>；未授权/关通知即不触达、不补偿</div>
+        <div class="qa-map">映射：Push SDK 接入、Push 深链落地</div>
       </div>
       <div class="qa-card dino">
-        <h3>Dino 对话（两项 · 7/8 晚补提测）</h3>
+        <h3>首页 Dino 引导 / 对话付费卡</h3>
         <span class="qa-owner">Owner：李芬蕾（lifenlei）</span>
-        <div class="qa-scope">完课入口 → 沉浸式聊天页（入口标识 / 课程上下文传参、报告页不出按钮）+ Dino 对话新需求（范围待评审）；开发燕航 / 郭武鑫 7/7 下午介入</div>
-        <div class="qa-map">映射：完课后「和 Dino 聊聊」入口、Dino 对话新需求</div>
+        <div class="qa-scope">首页引导条 6 态逐条验收（trial_never / trial_unfinished 断点续上 / trial_done_free / lesson_ready / lesson_cleared Explore·Play 变体 / default 问候）、TTS 播报 + 说话动效、每进/切回 Dino tab 重拉状态；对话付费卡：非会员≥6 轮→中性引导语+卡片→Paywall、单会话≤1、拒绝/无响应停推、24h 冷却、体验课卡已出则兜底不叠加</div>
+        <div class="qa-map">映射：首页 Dino 任务引导条、首页对话付费引导卡</div>
+      </div>
+      <div class="qa-card class">
+        <h3>麦克风交互改造</h3>
+        <span class="qa-owner">Owner：桂启剑（guiqijian1）</span>
+        <div class="qa-scope">点按开始 / 再点结束（原长按废弃）；掐头 / 掉尾 / 整段录不上三项收音修复；异常分支（后台 / 锁屏 / 来电自动结束、超长 60s、防抖 <0.5s 不发、权限请求与引导）；首次演示引导（可跳过）、长按误触轻提示（≤2 次）；埋点达标线录音成功率≥95% / 超短≤5%；首页 / Class / Explore 三入口共用</div>
+        <div class="qa-map">映射：麦克风交互改造</div>
       </div>
       <div class="qa-card play">
-        <h3>全局走查 / 多语言</h3>
+        <h3>热点课（世界杯 · P0）</h3>
+        <span class="qa-owner">Owner：程小艳（chengxiaoyan）</span>
+        <div class="qa-scope">E1 首页 Banner 三态（预告 / 进行 / 结束）+ 倒计时 + 无活动不占位；落地页 hero + 历史列表（补课/Replay 配置）；E2/E3 挽留弹窗带课的展示与四类不展示分支（已上过/无 active/已上完/E3 让位周卡折扣页频控）；课中复用数字人课堂加载课件 + 断点 + 独立记账 event_lesson_completed；完课 Report；CMS 配置免发版真机预览；老版本按最低版本号不下发</div>
+        <div class="qa-map">映射：热点课·首页 Banner + 落地页、热点课·挽留弹窗 + 课中 + Report</div>
+      </div>
+      <div class="qa-card play">
+        <h3>全局回归 / 多语言 / 埋点</h3>
         <span class="qa-owner">Owner：徐雪峰</span>
-        <div class="qa-scope">19 语言抽查「Dino」不被翻译、按钮方括号全局走查</div>
-        <div class="qa-map">映射：多语言文案专项（学习计划宣传页优化已移交前端，不在本表）</div>
+        <div class="qa-scope">19 语言新增文案抽查（折扣页 / Push 模板 / Banner / 首页引导文案不出译错、Dino 不被翻译）；全链路埋点参数校验（Push / Paywall / 首页引导 / 麦克风 / 热点课，通用维度：付费状态 / 版本 / 语言 / 渠道）；崩溃 / 性能回归随「长期 App 性能专项」持续跟，不在本版班车</div>
+        <div class="qa-map">映射：全链路埋点、多语言（崩溃 / 性能 → 长期 App 性能专项）</div>
       </div>
     </div>
     <div class="qa-timeline">
-      <div class="qa-phase p1"><b>7/7 晚–7/8 一轮测试</b>主链路验证（升降级 13 态过表）、基础回归、首轮 Bug 分配。</div>
-      <div class="qa-phase p2"><b>7/8 晚 补提测 + 二轮</b>聊聊入口 + Dino 对话新需求补包；二轮回归、兼容、服务端上线。</div>
-      <div class="qa-phase p3"><b>7/9 上午 TF 验证 / 下午提审</b>TF 包验收 + 产品验收，通过后下午提审。</div>
+      <div class="qa-phase p1"><b>7/11 晚–7/12 一轮测试</b>主链路验证（付费/折扣挽留、Push 授权+绑定、首页 6 态引导、麦克风收音）、基础回归、首轮 Bug 分配。</div>
+      <div class="qa-phase p2"><b>7/12 补提测 + 二轮</b>Push 深链 / 热点课 / 对话付费卡 / 埋点补包；二轮回归、兼容、服务端（CMS + 批次调度）上线联测。</div>
+      <div class="qa-phase p3"><b>7/13 上午 TF 验证 / 下午提审</b>TF 包验收 + 产品验收，通过后下午提审 → 目标 7/15 上线。</div>
     </div>
   </section>
 
   <div class="banner">
-    <b>范围：客户端双端 + 服务端八块依赖</b>（升降级状态机 / 手办配置 / Kakao 绑定 / Facebook 登录 / 引导卡路由下发 / 去 0 双格式兼容 / 宣传页文案下发 / Dino 对话新需求）。节奏：7/6（今天）评审+拍板+全面开工 → 接口≤7/7 上午 → 联调 7/7–7/8 → <b>7/7 晚主提测、7/8 晚补提测（对话两项）</b> → 7/8–7/9 测试/修复/验收 → <b>7/9 下午提审</b>。
+    <b>范围：客户端双端（iOS 5 / Android 7）+ 服务端多块依赖</b>（促销频控字段与划线倍数下发 / Push 分层判定+每小时批次调度+多语言模板+深链 payload / 首页 Dino 状态位接口 / 对话付费 paid_guide_invite marker / 世界杯 CMS 活动配置下发）。节奏：7/9（今天）评审+拍板+全面开工 → 设计/接口 ≤7/11 → 联调 7/11–7/12 → <b>7/11 晚主提测、7/12 补提测（Push / 热点课 / 对话付费 / 埋点）</b> → 7/12–7/13 测试/修复/验收 → <b>7/13 提审 → 7/15 上线（目标，缓冲 7/17）</b>。<b>数字人 / App 性能 / 课中 native 重构 / KMP 调研 等长期 App 需求见下方独立板块</b>，不占本班车。
   </div>
 
   <div class="cards">
-    <div class="card c1"><div class="k">评审会 + 拍板</div><div class="v">7/6（今天）</div></div>
-    <div class="card c2"><div class="k">接口最晚就位</div><div class="v">7/7 上午</div></div>
-    <div class="card c3"><div class="k">主提测 / 补提测</div><div class="v">7/7 晚 / 7/8 晚</div></div>
-    <div class="card c4"><div class="k">提审</div><div class="v">7/9（四）</div></div>
+    <div class="card c1"><div class="k">评审会 + 拍板</div><div class="v">7/9（今天）</div></div>
+    <div class="card c2"><div class="k">设计/接口最晚就位</div><div class="v">7/11 上午</div></div>
+    <div class="card c3"><div class="k">主提测 / 补提测</div><div class="v">7/11 晚 / 7/12</div></div>
+    <div class="card c4"><div class="k">提审 / 上线</div><div class="v">7/13 / 7/15</div></div>
   </div>
 
   <!-- ============ 功能可达性小结 ============ -->
   <section>
-    <h2>① 客户端可达性 <span class="tag">7/9 提审 · 13 项 = 8 需求 + 4 优化 + 1 新增（学习计划宣传页已移交前端）</span></h2>
+    <h2>① 客户端可达性 <span class="tag">7/15 上线 · 10 项客户端任务（长期 App 需求见下方独立板块）</span></h2>
     <div class="reach">
-      <div class="rrow"><span class="pill ok">🟢 4 项</span><div><b>稳</b>：探索引导卡（小，接口到即联调）、去前导 0（小，双端+后端双格式）、级别卡显示修复、多语言文案专项</div></div>
-      <div class="rrow"><span class="pill warn">🟡 7 项</span><div><b>争取（依赖到位就能上车）</b>：Paywall 竖屏（~2d UI 量、免联调）、背包手办分层（联调）、Kakao 绑定（新接口+外部口径）、Facebook 登录（双端 SDK 接入，服务端配置任务 Lark 排期 7/7 提测·刘阳阳，口径待确认）、登录链路展示优化（宣传页文案服务端下发）、聊聊入口 + Dino 对话新需求（燕航/郭武鑫 <b>7/7 下午才介入</b>，7/8 晚补提测，范围待评审）</div></div>
-      <div class="rrow"><span class="pill no">🔴 2 项</span><div><b>真瓶颈</b>：<b>课程升降级</b>（P0，双端各约 5d vs 2 天开发窗，且 <b>iOS 主R 空缺</b>——高焰本版本无法支持，升降级+引导卡+级别卡修复三项 iOS 未分配，今天必须「定人 + 加人并行 or 压范围」一起拍，否则 7/7 晚上不了车）；<b>选老师资源优化</b>（对口型资源外部制作 ≤7/7 交付，赶不上就砍出本班车，P1 可下车）</div></div>
+      <div class="rrow"><span class="pill ok">🟢 2 项</span><div><b>稳</b>：常规 Paywall 收敛年+月（纯客户端、复用 V1.3.2 版式、免联调）、麦克风交互改造（纯交互层、无新视觉稿、后端仅确认音频接口兼容）</div></div>
+      <div class="rrow"><span class="pill warn">🟡 5 项</span><div><b>争取（依赖到位就能上车）</b>：周卡限时折扣页 + 促销频控（客户端框架复用 <code>pro_weekly</code>，需后端下发划线倍数 + 频控字段）、首页对话付费引导卡（复用体验课卡，需对话引擎输出 marker + 后端注入会员态/24h）、Push SDK 接入（复用 Firebase，token 绑定/解绑+授权上报接口待定）、首页 Dino 任务引导条（复用现有首页 + TTS 能力，需状态位接口）、全链路埋点（需口径终稿 + 各功能自埋）</div></div>
+      <div class="rrow"><span class="pill no">🔴 3 项</span><div><b>真瓶颈</b>：<b>热点课·Banner+落地页</b> 与 <b>热点课·挽留弹窗+课中</b>（P0 双项，依赖 <b>CMS 运营后台 + 课件资源 + 服务端三态下发</b>，6 天窗口极紧）；<b>Push 深链落地</b>（依赖 Push 服务端基建：分层判定 + 每小时跑批 + 多语言模板 + payload 路由，服务端 <b>7/12 才提测</b>）</div></div>
     </div>
   </section>
 
   <!-- ============ 里程碑甘特 ============ -->
   <section>
-    <h2>② 里程碑时间线 <span class="tag">7/6 评审+开工 → 接口(≤7/7) → 联调 → 7/7晚主提测 / 7/8晚补提测 → 7/9 下午提审</span></h2>
+    <h2>② 里程碑时间线 <span class="tag">7/9 评审+开工 → 设计/接口(≤7/11) → 联调 → 7/11晚主提测 / 7/12补提测 → 7/13 提审 → 7/15 上线</span></h2>
     <div class="gh"><div class="lab"></div><div class="axis">
-      <div class="d key">7/6<small>一</small></div><div class="d pt">7<small>二</small></div><div class="d">8<small>三</small></div><div class="d key">9<small>四</small></div>
-      <div class="d">10<small>五</small></div><div class="d we">11<small>六</small></div><div class="d key">12<small>日</small></div><div class="d">13<small>一</small></div>
-      <div class="d">14<small>二</small></div><div class="d">15<small>三</small></div><div class="d">16<small>四</small></div><div class="d">17<small>五</small></div>
+      <div class="d key">7/9<small>四</small></div><div class="d">10<small>五</small></div><div class="d pt">11<small>六</small></div><div class="d pt">12<small>日</small></div>
+      <div class="d key">13<small>一</small></div><div class="d">14<small>二</small></div><div class="d key">15<small>三</small></div><div class="d">16<small>四</small></div>
+      <div class="d">17<small>五</small></div><div class="d we">18<small>六</small></div><div class="d we">19<small>日</small></div><div class="d">20<small>一</small></div>
     </div></div>
-    <div class="track"><div class="lab">前置/评审/资源</div><div class="lane"><div class="bar b-pre" style="left:0%;width:16%">7/6 评审+拍板 · 设计首批 · 对口型资源≤7/7</div></div></div>
-    <div class="track"><div class="lab">UI 开发（mock)</div><div class="lane"><div class="vline" style="left:12%"></div><div class="bar b-dev" style="left:0%;width:16%">7/6 起全员开工，不等接口</div></div></div>
-    <div class="track"><div class="lab">联调（8 项）</div><div class="lane"><div class="vline" style="left:12%"></div><div class="bar b-link" style="left:8%;width:16%" title="升降级 / 手办 / Kakao绑定 / FB登录 / 引导卡路由 / 去0双格式 / 宣传页文案下发 / Dino对话新需求 与服务端联调">8 项服务端联调 7/7–7/8</div></div></div>
-    <div class="track"><div class="lab">🚩 主提测</div><div class="lane"><div class="mile" style="left:12%"><span class="dia" style="background:var(--pt)"></span>7/7 晚</div></div></div>
-    <div class="track"><div class="lab">🚩 补提测（对话两项）</div><div class="lane"><div class="mile" style="left:20%"><span class="dia" style="background:var(--pt)"></span>7/8 晚</div></div></div>
-    <div class="track"><div class="lab">测试</div><div class="lane"><div class="bar b-test" style="left:16%;width:16%">一轮+二轮压缩回归</div></div></div>
-    <div class="track"><div class="lab">UI验收 ①/②</div><div class="lane"><div class="bar b-link" style="left:16%;width:8%">①</div><div class="bar b-link" style="left:24%;width:4%">②</div></div></div>
-    <div class="track"><div class="lab">修复 Bug</div><div class="lane"><div class="bar b-fix" style="left:16%;width:16%">穿插修复</div></div></div>
-    <div class="track"><div class="lab">产品验收 + TF</div><div class="lane"><div class="bar b-pv" style="left:24%;width:6%">7/9 上午</div></div></div>
-    <div class="track"><div class="lab">提审 / 审核</div><div class="lane"><div class="mile" style="left:28%"><span class="dia"></span>7/9 下午提审</div><div class="bar b-review" style="left:30%;width:18%">App 审核</div></div></div>
-    <div class="track"><div class="lab">上线</div><div class="lane"><div class="mile" style="left:52%"><span class="dia" style="background:var(--pv)"></span>7/12</div><div class="bar outline" style="left:48%;width:24%">顺利 7/12 / 缓冲 7/14</div></div></div>
+    <div class="track"><div class="lab">前置/评审/资源</div><div class="lane"><div class="bar b-pre" style="left:0%;width:25%">7/9 评审+拍板 · 设计首批 · 世界杯课件/素材+CMS≤7/11</div></div></div>
+    <div class="track"><div class="lab">UI 开发（mock)</div><div class="lane"><div class="vline" style="left:16.7%"></div><div class="bar b-dev" style="left:0%;width:25%">7/9 起全员开工，不等接口</div></div></div>
+    <div class="track"><div class="lab">联调（7 项）</div><div class="lane"><div class="vline" style="left:16.7%"></div><div class="bar b-link" style="left:8.3%;width:25%" title="折扣页频控 / 对话付费marker / Push接入 / Push深链 / 首页Dino状态位 / 热点课Banner落地页 / 热点课弹窗课件 与服务端联调">7 项服务端联调 7/11–7/12</div></div></div>
+    <div class="track"><div class="lab">🚩 主提测</div><div class="lane"><div class="mile" style="left:16.7%"><span class="dia" style="background:var(--pt)"></span>7/11 晚</div></div></div>
+    <div class="track"><div class="lab">🚩 补提测（Push/热点课/对话付费/埋点）</div><div class="lane"><div class="mile" style="left:25%"><span class="dia" style="background:var(--pt)"></span>7/12</div></div></div>
+    <div class="track"><div class="lab">测试</div><div class="lane"><div class="bar b-test" style="left:16.7%;width:20%">一轮+二轮压缩回归</div></div></div>
+    <div class="track"><div class="lab">UI验收 ①/②</div><div class="lane"><div class="bar b-link" style="left:16.7%;width:8.3%">①</div><div class="bar b-link" style="left:25%;width:6%">②</div></div></div>
+    <div class="track"><div class="lab">修复 Bug</div><div class="lane"><div class="bar b-fix" style="left:16.7%;width:20%">穿插修复</div></div></div>
+    <div class="track"><div class="lab">产品验收 + TF</div><div class="lane"><div class="bar b-pv" style="left:33.3%;width:6%">7/13 上午</div></div></div>
+    <div class="track"><div class="lab">提审 / 审核</div><div class="lane"><div class="mile" style="left:33.3%"><span class="dia"></span>7/13 提审</div><div class="bar b-review" style="left:35.5%;width:14.5%">App 审核</div></div></div>
+    <div class="track"><div class="lab">上线</div><div class="lane"><div class="mile" style="left:50%"><span class="dia" style="background:var(--pv)"></span>7/15</div><div class="bar outline" style="left:50%;width:16.7%">顺利 7/15 / 缓冲 7/17</div></div></div>
     <div style="font-size:12px;color:#334155;margin-top:12px;background:#f0fdfa;border-left:4px solid var(--link);border-radius:8px;padding:10px 13px;line-height:1.7;">
-      <b>🔗 联调安排</b>（接口最晚 7/7 上午到，联调 7/7–7/8，赶 7/7 晚主提测）：<br>
-      · <b>与服务端（8 项）</b> — 课程升降级（状态机/切档/排课）、背包手办（ip/series+配置）、Kakao 绑定（新接口）、Facebook 登录（token 校验/账号关联，Lark 配置任务 7/7 提测·刘阳阳）、探索引导卡（本周完成判断+<b>路由下发</b>）、去前导 0（后端兼容 <b>+0 / 不加 0</b> 双格式）、登录宣传页对话文案（<b>服务端下发</b>）、Dino 对话新需求（范围待评审）<br>
-      · <b>聊聊入口</b> — 与对话工程做入口标识 / 课程上下文参数对齐；与 Dino 对话新需求一起 <b>7/8 晚补提测</b><br>
-      · <b>其余 4 项</b> — ✅ 免联调（纯客户端）：Paywall、选老师资源、级别卡修复、多语言专项
+      <b>🔗 联调安排</b>（设计/接口最晚 7/11 上午到，联调 7/11–7/12，赶 7/11 晚主提测；Push 基建 / 热点课 CMS 偏晚，压 7/12 补提测）：<br>
+      · <b>与服务端（7 项）</b> — 周卡折扣页+频控（划线倍数+<code>last_winback_ts</code>/<code>last_daily_offer_ts</code>）、对话付费卡（<code>paid_guide_invite</code> marker + 会员态/24h 注入）、Push SDK 接入（token 绑定·解绑 + 授权上报）、Push 深链（三场景 payload + 每小时批次调度）、首页 Dino 引导条（<b>状态位接口</b>：trial_started/finished、is_member、断点、可上正式课）、热点课 Banner+落地页（<b>CMS 三态下发</b>）、热点课弹窗+课中（active theme course 判定 + 课件下发）<br>
+      · <b>Push / 热点课 偏晚</b> — Push 服务端基建与热点课 CMS 预计 <b>7/12 才提测</b>，对应客户端两条 Push + 两条热点课压 <b>7/12 补提测</b><br>
+      · <b>其余免联调（纯客户端）</b> — ✅ 常规 Paywall 收敛、麦克风改造
     </div>
   </section>
 
   <!-- ============ 人员排期 ============ -->
   <section>
-    <h2>③ 人员排期（建议分工 · 同模块延续 V1.3.0 原班） <span class="tag">条色：蓝=🟢 / 黄=重点 / 红=关键路径 / 青=联调</span></h2>
+    <h2>③ 人员排期（建议分工 · 延续 V1.3.2 原班 + Android 新增 李永祺） <span class="tag">条色：蓝=🟢 / 黄=重点 / 红=关键路径 / 青=联调</span></h2>
     <div class="teaminfo">
-      开发窗只有 7/6–7/7 两天（对话两项到 7/8）。<b>🔴 升降级+引导卡+级别卡修复 ≈6d 的 iOS 主R 空缺（高焰本版本无法支持）——今天必须定人</b>（贾宾余量最大 ≈1.5d，或多人拆横幅/弹窗/锁态并行）；Android 侧魏博源同样 ≈6d 压 2 天，需加人或压范围。王宁宁 / 杨金鹏 绑定+去0+登录展示 ≈3.5d 偏紧；刘亚平 / 李政 选老师资源+多语言 ≈3d（对口型资源 7/7 不到就砍）；付玉佳 / 郭浦然 Paywall ≈2d + Facebook 登录 ≈1d（服务端配置任务 Lark 排期 7/7 提测，随 Kakao 节奏联调）；贾宾 / 沈延涛 手办 ≈1.5d；<b>燕航 / 郭武鑫 7/7 下午介入</b>：聊聊入口 + Dino 对话新需求，7/8 晚补提测。分工在看板「按功能」Tab 可改，此处自动跟随。
+      开发窗 7/9–7/11 三天（Push / 热点课 / 对话付费 / 埋点到 7/12）。<b>付玉佳 / 郭浦然</b>：Paywall 收敛 + 周卡折扣页+频控（挽留/每日启动）≈2.5d；<b>燕航 / 郭武鑫</b>：对话付费卡 + 首页 Dino 6 态引导条（含 TTS 播报动效）≈3d；<b>王宁宁 / 杨金鹏</b>：Push SDK 接入（token 绑定·解绑/授权/时区）+ 深链落地 ≈3d（<b>王宁宁统筹 Push 埋点</b>）；<b>刘亚平 / 李政</b>：麦克风改造 + 全链路埋点 ≈2.5d；<b>贾宾 / 魏博源 / 沈延涛·李永祺</b>：<b>🔴 热点课 P0</b>（Banner+落地页 + 弹窗/课中/Report）双端各 ≈3d，依赖 CMS+课件 7/11，最紧。<b>崩溃、性能、数字人、课中 native 重构、KMP 调研等已移入下方「长期 App 开发需求」板块</b>（不跟版本、与本班车共用人力）。分工在看板「按大类·功能」Tab 可改，此处自动跟随。
     </div>
     <div id="people-schedule"></div>
     <div id="people-schedule-static" style="display:none;">
     <div class="gh"><div class="lab"></div><div class="axis">
-      <div class="d key">7/6</div><div class="d pt">7</div><div class="d">8</div><div class="d key">9</div><div class="d">10</div><div class="d we">11</div><div class="d key">12</div><div class="d">13</div>
-      <div class="d">14</div><div class="d">15</div><div class="d">16</div><div class="d">17</div>
+      <div class="d key">7/9</div><div class="d">10</div><div class="d pt">11</div><div class="d pt">12</div><div class="d key">13</div><div class="d">14</div><div class="d key">15</div><div class="d">16</div>
+      <div class="d">17</div><div class="d we">18</div><div class="d we">19</div><div class="d">20</div>
     </div></div>
-
-    <div class="grp ios">iOS 端（7/6 UI → 7/7–7/8 联调 → 7/7 晚主提测 / 7/8 晚补提测）</div>
-    <div class="track"><div class="lab">待定 🔴</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-no" style="left:0%;width:12%" title="iOS 主R 空缺（高焰本版本无法支持）：课程升降级 + 探索引导卡 + 级别卡修复 ≈6d，今天定人">升降级+引导卡+级别卡·无主R🔴</div><div class="bar b-link" style="left:12%;width:8%">联调</div></div></div>
-    <div class="track"><div class="lab">王宁宁</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-dev" style="left:0%;width:12%">Kakao绑定+去0+登录展示</div><div class="bar b-link" style="left:12%;width:8%">联调</div></div></div>
-    <div class="track"><div class="lab">付玉佳</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-warn" style="left:0%;width:12%">Paywall+FB登录</div><div class="bar b-link" style="left:12%;width:8%">联调</div></div></div>
-    <div class="track"><div class="lab">燕航</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-warn" style="left:12%;width:12%" title="7/7 下午介入，7/8 晚补提测">聊聊入口+Dino对话（7/7下午起）</div><div class="bar b-link" style="left:20%;width:4%">对齐</div></div></div>
-    <div class="track"><div class="lab">贾宾</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-dev" style="left:0%;width:12%">手办分层</div><div class="bar b-link" style="left:12%;width:8%">联调</div></div></div>
-    <div class="track"><div class="lab">刘亚平</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-warn" style="left:0%;width:16%">选老师资源+多语言专项</div></div></div>
-
-    <div class="grp android">Android 端（平行 · 同节奏）</div>
-    <div class="track"><div class="lab">魏博源</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-no" style="left:0%;width:12%" title="课程升降级 + 探索引导卡 + 级别卡修复 ≈6d 压 2 天，需加人或压范围">升降级+引导卡+级别卡⚠</div><div class="bar b-link" style="left:12%;width:8%">联调</div></div></div>
-    <div class="track"><div class="lab">杨金鹏</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-dev" style="left:0%;width:12%">Kakao绑定+去0+登录展示</div><div class="bar b-link" style="left:12%;width:8%">联调</div></div></div>
-    <div class="track"><div class="lab">郭浦然</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-warn" style="left:0%;width:12%">Paywall+FB登录</div><div class="bar b-link" style="left:12%;width:8%">联调</div></div></div>
-    <div class="track"><div class="lab">郭武鑫</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-warn" style="left:12%;width:12%" title="7/7 下午介入，7/8 晚补提测">聊聊入口+Dino对话（7/7下午起）</div><div class="bar b-link" style="left:20%;width:4%">对齐</div></div></div>
-    <div class="track"><div class="lab">沈延涛</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-dev" style="left:0%;width:12%">手办分层</div><div class="bar b-link" style="left:12%;width:8%">联调</div></div></div>
-    <div class="track"><div class="lab">李政</div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-warn" style="left:0%;width:16%">选老师资源+多语言专项</div></div></div>
-
-    <div class="grp qa">职能角色（非开发名单）</div>
-    <div class="track"><div class="lab">产品 <small>口径/验收</small></div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-pre" style="left:0%;width:8%">评审+拍板</div><div class="bar b-pre" style="left:8%;width:8%">口径/文案</div><div class="bar b-pv" style="left:24%;width:6%">验</div></div></div>
-    <div class="track"><div class="lab">设计 <small>视觉/验收</small></div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-pre" style="left:0%;width:16%">设计首批 7/6 → 7/7</div><div class="bar b-link" style="left:16%;width:8%">UI验收①</div><div class="bar b-link" style="left:24%;width:4%">②</div></div></div>
-    <div class="track"><div class="lab">QA <small>双端</small></div><div class="lane"><div class="vline" style="left:12%"></div>
-      <div class="bar b-test" style="left:16%;width:16%">7/7晚提测 → 回归+TF</div></div></div>
+    <div class="teaminfo" style="margin:8px 0;">↑ 静态兜底视图；实际人员甘特由上方【③ 人员排期】<b>动态渲染</b>（跟随看板「按功能」Tab 的开始 / 提测时间与分工）。以下仅列固定职能里程碑。</div>
+    <div class="grp qa">职能角色（固定里程碑）</div>
+    <div class="track"><div class="lab">产品 <small>口径/验收</small></div><div class="lane"><div class="vline" style="left:16.7%"></div>
+      <div class="bar b-pre" style="left:0%;width:8.3%">评审+拍板</div><div class="bar b-pre" style="left:8.3%;width:8.3%">口径/文案</div><div class="bar b-pv" style="left:33.3%;width:6%">验</div></div></div>
+    <div class="track"><div class="lab">设计 <small>视觉/验收</small></div><div class="lane"><div class="vline" style="left:16.7%"></div>
+      <div class="bar b-pre" style="left:0%;width:25%">设计首批 7/9 → 7/11</div><div class="bar b-link" style="left:16.7%;width:8.3%">UI验收①</div><div class="bar b-link" style="left:25%;width:6%">②</div></div></div>
+    <div class="track"><div class="lab">QA <small>双端</small></div><div class="lane"><div class="vline" style="left:16.7%"></div>
+      <div class="bar b-test" style="left:16.7%;width:20%">7/11晚提测 → 回归+TF</div></div></div>
     </div>
   </section>
 
   <!-- ============ 并行前置 ============ -->
   <section>
-    <h2>④ 需并行推进的前置（今明两天全部落地，决定 7/9 提审能否成立）</h2>
+    <h2>④ 需并行推进的前置（7/9–7/11 全部落地，决定 7/15 上线能否成立）</h2>
     <ul>
-      <li><b>7/6（今天）评审会 + 全部拍板项</b>（聊聊入口标识字段 / 划线价系数 X / 对口型方案 1 或 2 / <b>Dino 对话新需求范围</b> / <b>升降级加人 or 压范围</b>）——升降级<b>附录表 A/B 当场冻结</b>为验收口径。</li>
-      <li><b>设计 7/6 晚首批</b>：Paywall 竖屏 + 升降级三件套（横幅 / 弹窗 / 锁态）；其余 ≤7/7（Kakao 绑定页已有 Figma 4867:18878 走查即可；Dino 对话新需求随范围评审出）。</li>
-      <li><b>对口型资源制作 ≤7/7</b>（外部制作周期）：赶不上就把「选老师资源优化」砍出本班车（P1）。</li>
-      <li><b>新增文案今天提翻译后台</b>（19 语言回收周期极限）：Paywall 全套、横幅 / 弹窗 / toast、绑定页、引导卡、Series complete；<b>登录宣传页对话文案改为服务端下发</b>，客户端只做展示口径。</li>
-      <li><b>服务端八块依赖 ≤7/7 上午可联调</b>：升降级状态机 / 手办 ip·series+配置 / Kakao 绑定接口 / Facebook 登录（token 校验·Lark 配置任务 7/7 提测）/ <b>引导卡「本周完成」判断+路由下发</b> / <b>去前导 0 双格式兼容（+0 与不加 0 都要能处理）</b> / 宣传页文案下发 / Dino 对话新需求（接口待评审）——接口文档今天晚上给。<b>Lark 同步（7/7）：升降级、引导卡服务端 7/8 才提测，这两项联调压到 7/8；去前导 0、宣传页文案下发在 Lark 无任务，7/7 必须确认归属（详见「服务端接口依赖」卡片）。</b></li>
-      <li><b>Kakao 手机号返回口径 + 韩国短信通道复用</b>今天确认；<b>手办 IP/系列配置与存量归属映射</b>（运营）≤7/7；<b>埋点口径</b>（是否本期加）今天定。</li>
+      <li><b>7/9（今天）评审会 + 全部拍板项</b>（数字人方案先与晓宇沟通 / 划线倍数 X=1.5 终值 / 付费卡片触发轮数 N=6 + 灰度 5% / 世界杯活动配置口径与补课规则 / 埋点是否本期全量加）。</li>
+      <li><b>数字人 / App 性能 / 课中 native 重构 / KMP 调研 等已移入下方「长期 App 开发需求」板块</b>（不跟版本）——其中<b>数字人 + Lottie 优化 + 资源产出平台需先与晓宇沟通方案</b>，本班车不落地开发；今天对齐这些长期项的 Owner 与启动节奏即可。</li>
+      <li><b>设计 7/9 晚首批</b>：周卡限时折扣页 + 首页 Dino 引导条；其余 ≤7/11（世界杯 Banner+落地页、E2/E3 挽留弹窗、麦克风提示类终稿、对话付费卡复用体验课卡视觉）。</li>
+      <li><b>世界杯课件资源 + Banner/落地页素材 ≤7/11</b>（素材 ≤300KB，首屏不劣化）；<b>多语言运营文案周五 7/11 上午前</b>；赶不上则 Banner 走「无 active theme course 不占位」兜底、活动顺延。</li>
+      <li><b>新增文案今天提翻译后台</b>（19 语言回收周期极限）：折扣页全套、Push 三场景模板（标题+正文、变量 {孩子名}/{定级}、不用 emoji）、首页 6 态引导文案、Banner/落地页。</li>
+      <li><b>服务端多块依赖 ≤7/11–7/12 可联调</b>：促销频控字段 + 划线倍数下发 / 对话付费 <code>paid_guide_invite</code> marker + 会员态·24h 注入 / Push 分层判定 + 每小时批次调度 + 多语言模板 + 深链 payload / 首页 Dino 状态位接口 / 世界杯 CMS 活动配置下发 + active theme course 判定。<b>Push 基建与热点课 CMS 预计 7/12 才提测，这几项联调压到 7/12 补提测；Lark 后端「服务端任务管理」暂无匹配任务，7/9 必须确认归属与排期（详见「服务端接口依赖」卡片）。</b></li>
+      <li><b>S3 周解锁生效时刻归一到本地解锁日 00:00</b>（现随排课时刻生效）需后端评估，确保会员新课当日即被晚间批次提醒；<b>埋点口径终稿</b>（数据）≤7/10，热点课埋点研发对接 <b>王宁宁</b>（PRD 指定）。</li>
     </ul>
   </section>
 
   <!-- ============ 待拍板 ============ -->
   <section>
-    <h2>⑤ 待 manager / 产品拍板（7/6 评审会一次清）</h2>
+    <h2>⑤ 待 manager / 产品拍板（7/9 评审会一次清）</h2>
     <table class="f">
-      <tr><td>1</td><td><b>升降级怎么进 7/9？</b> 双端各约 5d 工作量 vs 2 天开发窗，且 <b>iOS 主R 空缺（高焰本版本无法支持，升降级 / 引导卡 / 级别卡修复三项 iOS 未分配）</b>——今天必须「<b>定人 + 加人并行（拆横幅 / 弹窗 / 锁态三块）or 压范围</b>」一起拍；附录表 A/B 当场冻结为唯一验收基准。</td></tr>
-      <tr><td>2</td><td><b>Dino 对话新需求的范围？</b> 需求内容、接口依赖、验收标准今天评审明确；与聊聊入口一起燕航 / 郭武鑫 7/7 下午介入、7/8 晚补提测能否覆盖。</td></tr>
-      <tr><td>3</td><td><b>「和 Dino 聊聊」入口标识字段方案？</b> 字段名与取值枚举（首个 <code>class_card</code>）；后续入口按此扩展。对话工程侧调整见淑怡后续文档。</td></tr>
-      <tr><td>4</td><td><b>划线原价系数 X=1.4 终值？</b> 客户端写死还是服务端 / 配置下发。</td></tr>
-      <tr><td>5</td><td><b>对口型资源走方案 1（视频）还是方案 2（Lottie+固定音频）？</b> 外部制作 ≤7/7 交付才随本班车，否则「选老师资源优化」延后（P1 可下车）。</td></tr>
-      <tr><td>6</td><td><b>手办 IP/系列配置数据源？</b> 服务端下发 or 客户端内置；存量归属映射运营何时给全。</td></tr>
+      <tr><td>1</td><td><b>7/15 上线怎么成立？</b> 10 项客户端任务压 7/9–7/11 三天开发窗，其中 <b>热点课 P0 双项</b>（Banner+落地页 / 弹窗+课中）强依赖 CMS 运营后台 + 课件资源 + 服务端三态——今天必须拍「<b>CMS 与课件 7/11 能否就位</b>」，否则热点课砍出本班车、活动顺延（Banner 走无 active theme course 不占位兜底）。</td></tr>
+      <tr><td>2</td><td><b>长期 App 需求怎么启动？</b> 数字人 + Lottie 优化 + 资源产出平台（<b>需先与晓宇沟通方案</b>）、App 性能专项、课中 native 重构、KMP 调研、UI / 自动化测试 skill——均<b>不跟版本</b>，见下方「长期 App 开发需求」板块，今天确认各项 Owner 与启动节奏。</td></tr>
+      <tr><td>3</td><td><b>划线原价倍数 X=1.5 终值？</b>（当前 → 划线价 $16.49 / 33% OFF）客户端写死还是<b>服务端可配下发</b>；促销频控字段（<code>last_winback_ts</code>/<code>last_daily_offer_ts</code>/<code>is_member</code>）后端归属与提测时间。</td></tr>
+      <tr><td>4</td><td><b>对话付费卡触发轮数 N=6 与灰度 5%？</b> <code>paid_guide_invite</code> marker、会员态/24h 冷却注入由对话引擎+后端落地（淑怡产品口径），与「对话上限触点」互不占额度——今天确认后端是否本期建任务。</td></tr>
+      <tr><td>5</td><td><b>Push 授权与调度口径？</b> 启动即请求授权、device_timezone 晚间 18:00 批次（可配）、S3 周解锁生效时刻归一本地日 00:00（需后端评估）；<b>App 活跃时不弹系统横幅</b>的前台处理口径确认；登录绑 token / 登出解绑 / 多账号多设备触达规则。</td></tr>
+      <tr><td>6</td><td><b>埋点是否本期全量加？</b> 麦克风达标线（成功率≥95% / 超短≤5%）、Push/Paywall/首页引导/热点课 事件与参数口径 ≤7/10 定；热点课埋点研发对接 <b>王宁宁</b>（PRD 指定）。</td></tr>
     </table>
-    <div class="info" style="margin-top:12px"><b>结论</b>：13 项 = 🟢4 稳 + 🟡7 争取 + 🔴2 瓶颈（学习计划宣传页优化已移交前端），7/9 提审是极限压缩班车。三个硬条件今天闭环才成立：<b>①升降级加人 / 压范围拍定；②服务端 8 块依赖 7/7 上午全部可联调；③对口型资源 7/7 交付（否则砍出班车）</b>。对话两项按 7/8 晚补提测单独跟。
+    <div class="info" style="margin-top:12px"><b>结论</b>：10 项客户端任务 = 🟢2 稳 + 🟡5 争取 + 🔴3 瓶颈（热点课双项 + Push 深链）。7/15 上线是<b>极限压缩班车</b>，三个硬条件今天闭环才成立：<b>①热点课 CMS + 课件 7/11 就位（否则砍车顺延）；②Push 服务端基建 7/12 可联调；③设计首批 7/9 晚出、其余 ≤7/11</b>。Push / 热点课 / 对话付费 / 埋点按 7/12 补提测单独跟。<b>长期 App 需求（数字人 / 性能 / 重构 / 调研等）不跟版本，见下方独立板块。</b>
     </div>
   </section>
 
-  <footer>Dino English V1.3.2 · 13 项任务 · 7/7 晚主提测 / 7/8 晚补提测 / 7/9 提审 · AI Coding 工时口径 · 生成于 2026-07-06 · 服务端接口依赖 2026-07-07 同步自 Lark「服务端任务管理」</footer>
+  <footer>Dino English V1.4.0 · 10 项客户端任务 · 7/11 晚主提测 / 7/12 补提测 / 7/13 提审 / 7/15 上线 · AI Coding 工时口径 · 生成于 2026-07-09 · 长期 App 需求（数字人 / 性能 / 重构 / 调研等）不跟版本独立列 · 服务端接口依赖待与 Lark「服务端任务管理」匹配</footer>
 
 </div>
 <script>
 (function(){
   window.__DINO_READONLY=true;
-  window.__DINO_PUBLISHED_AT="2026-07-07 17:39";
-  window.__DINO_PUBLISH_ID="1783417156463";
+  window.__DINO_PUBLISHED_AT="2026-07-09 19:41";
+  window.__DINO_PUBLISH_ID="1783597277822";
   var publishedState={
-  "dino132_pre_done_v1": "[\"升降级横幅 / 二次确认弹窗 / 级别卡锁态设计交付\",\"Kakao 手机号绑定页设计走查（Figma 4867:18878）\",\"探索引导卡 + 完课「聊聊」按钮设计交付\",\"Dino 对话新需求设计交付（随范围评审）\"]",
-  "dino132_feat_date_v2": "{\"3\":{\"ios\":{\"start\":\"2026-07-07\",\"test\":\"2026-07-08\"},\"and\":{\"start\":\"2026-07-07\",\"test\":\"2026-07-08\"}},\"12\":{\"ios\":{\"start\":\"2026-07-07\",\"test\":\"2026-07-08\"},\"and\":{\"start\":\"2026-07-07\",\"test\":\"2026-07-08\"}}}",
-  "dino132_collapsed_v1": "[]",
-  "dino132_status_tab_v1": "feat",
-  "dino132_status_v1": "{\"i12\":\"联调中\",\"i0\":\"UI开发中\",\"a0\":\"UI开发中\",\"a4\":\"联调中\",\"i4\":\"联调中\",\"i9\":\"联调中\",\"i2\":\"联调中\",\"i5\":\"联调中\",\"a9\":\"联调中\",\"a2\":\"联调中\",\"a5\":\"联调中\",\"a12\":\"联调中\",\"a10\":\"联调中\",\"i3\":\"联调中\",\"i11\":\"联调中\",\"a3\":\"联调中\",\"a11\":\"联调中\",\"i7\":\"联调中\",\"a7\":\"联调中\",\"a8\":\"UI开发中\"}",
-  "dino132_feat_assign_v1": "{\"1\":{\"ios\":\"贾宾\",\"and\":\"魏博源\"},\"2\":{\"ios\":\"王宁宁\",\"and\":\"杨金鹏\"},\"4\":{\"ios\":\"贾宾\"},\"8\":{\"ios\":\"付玉佳\",\"and\":\"李永祺\"},\"9\":{\"ios\":\"贾宾\",\"and\":\"魏博源\"},\"10\":{\"ios\":\"付玉佳\",\"and\":\"郭浦然\"},\"11\":{\"ios\":\"燕航\",\"and\":\"郭武鑫\"}}",
-  "dino132_early_done_v1": "[]",
-  "dino132_status_reason_v1": "{}"
+  "dino140_feat_owner_v1": "{\"3\":\"杨金鹏\",\"4\":\"杨金鹏\",\"6\":\"燕航\",\"10\":\"魏博源\"}",
+  "dino140_collapsed_v1": "[]",
+  "dino140_cat_owner_v1": "{\"c-paywall\":\"沈延涛\",\"c-push\":\"杨金鹏\",\"c-dino\":\"郭武鑫\",\"c-theme\":\"付玉佳\"}",
+  "dino140_feat_date_v2": "{\"0\":{\"ios\":{\"test\":\"2026-07-13\"},\"and\":{\"test\":\"2026-07-13\"}},\"1\":{\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"},\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"}},\"2\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"}},\"3\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"}},\"4\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"}},\"5\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"}},\"6\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"}},\"7\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"}},\"8\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"}},\"9\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"}},\"10\":{\"ios\":{\"test\":\"2026-07-14\"},\"and\":{\"test\":\"2026-07-14\"}}}",
+  "dino140_feat_assign_v1": "{\"0\":{\"ios\":\"付玉佳\",\"and\":\"沈延涛\"},\"1\":{\"ios\":\"付玉佳\",\"and\":\"沈延涛\"},\"6\":{\"ios\":\"贾宾\",\"and\":\"魏博源\"},\"7\":{\"ios\":\"付玉佳·刘亚平\",\"and\":\"郭浦然·李政·李永祺\"},\"8\":{\"ios\":\"付玉佳·刘亚平\",\"and\":\"郭浦然·李政\"},\"9\":{\"ios\":\"刘亚平·王宁宁\",\"and\":\"李政·杨金鹏\"},\"10\":{\"and\":\"郭浦然\"}}",
+  "dino140_status_tab_v1": "feat",
+  "dino140_pre_done_v1": "[]",
+  "dino140_early_done_v1": "[]",
+  "dino140_status_reason_v1": "{}"
 };
   try{
     Object.keys(publishedState).forEach(function(key){
@@ -512,56 +511,51 @@
     });
   }catch(e){}
   document.addEventListener("DOMContentLoaded",function(){
-    document.querySelectorAll(".stsel,.afowner-sel,input.adt,.streason").forEach(function(el){el.disabled=true;});
+    document.querySelectorAll(".stsel,.afowner-sel,.cat-owner-sel,input.adt,.streason").forEach(function(el){el.disabled=true;});
   });
 })();
 </script>
 <script>
 (function(){
   var PRES = [
-    {name:'PRD 评审会 + 全部拍板（升降级加人或压范围 / Dino对话范围 / 入口标识 / 划线价 / 对口型方案）', date:'2026-07-06', owner:'产品·manager', daily:true},
-    {name:'新增文案提翻译后台（Paywall / 横幅弹窗 / 绑定页 / 引导卡等 19 语言）', date:'2026-07-06', owner:'产品·翻译'},
-    {name:'登录宣传页对话文案下发口径 + 终版文案（服务端下发）', date:'2026-07-07', owner:'产品·服务端'},
-    {name:'对口型资源方案拍板（方案1 视频 / 方案2 Lottie+固定音频）', date:'2026-07-06', owner:'产品·客户端 TL'},
-    {name:'对口型资源文件制作交付（按选定方案，赶不上则砍出本班车）', date:'2026-07-07', owner:'设计·内容', daily:true},
-    {name:'手办 IP/系列配置与存量归属映射表', date:'2026-07-07', owner:'产品·运营'},
-    {name:'设计交付总 Deadline', date:'2026-07-07', owner:'设计', children:[
-      {name:'Paywall 竖屏改版设计交付', date:'2026-07-06', owner:'设计'},
-      {name:'升降级横幅 / 二次确认弹窗 / 级别卡锁态设计交付', date:'2026-07-06', owner:'设计'},
-      {name:'背包手办 IP/系列分层设计交付', date:'2026-07-07', owner:'设计'},
-      {name:'探索引导卡 + 完课「聊聊」按钮设计交付', date:'2026-07-07', owner:'设计'},
-      {name:'Kakao 手机号绑定页设计走查（Figma 4867:18878）', date:'2026-07-06', owner:'设计'},
-      {name:'宣传页 / loading 展示优化设计确认', date:'2026-07-07', owner:'设计'},
-      {name:'Dino 对话新需求设计交付（随范围评审）', date:'2026-07-07', owner:'设计'}
+    {name:'PRD 评审会 + 全部拍板（划线倍数X=1.5 / 付费卡片N=6+灰度5% / 世界杯活动配置+补课规则 / 埋点是否本期加）', date:'2026-07-09', owner:'产品·manager', daily:true},
+    {name:'新增文案提翻译后台（折扣页 / Push三场景模板 / 首页6态引导 / Banner落地页 等 19 语言）', date:'2026-07-09', owner:'产品·翻译'},
+    {name:'世界杯主题课 课件资源 + Banner/落地页素材交付（素材≤300KB，首屏不劣化）', date:'2026-07-11', owner:'设计·内容', daily:true},
+    {name:'世界杯新增页面多语言运营文案（周五 7/11 上午前）', date:'2026-07-11', owner:'产品·运营'},
+    {name:'运营后台 CMS 世界杯活动配置能力（免客户端发版 + 真机预览）', date:'2026-07-11', owner:'服务端·运营', daily:true},
+    {name:'设计交付总 Deadline', date:'2026-07-11', owner:'设计', children:[
+      {name:'周卡限时折扣页（挽留/每日启动共用）设计交付', date:'2026-07-09', owner:'设计'},
+      {name:'首页 Dino 任务引导条（绿色行动条+TTS图标）设计交付', date:'2026-07-09', owner:'设计'},
+      {name:'世界杯 Banner + 落地页（hero+历史列表）设计交付', date:'2026-07-11', owner:'设计'},
+      {name:'E2/E3 退出挽留弹窗（带主题课）设计交付', date:'2026-07-11', owner:'设计'},
+      {name:'麦克风提示类（超长/失败/权限引导/长按轻提示/引导动效终稿）设计', date:'2026-07-11', owner:'设计'},
+      {name:'对话付费引导卡（复用体验课卡）文案/视觉确认', date:'2026-07-10', owner:'设计·对话'}
     ]},
-    {name:'Kakao 授权手机号返回口径 + 韩国短信通道复用确认', date:'2026-07-07', owner:'服务端·运营', daily:true},
-    {name:'服务端接口依赖', date:'2026-07-07', owner:'服务端', children:[]},
-    {name:'埋点口径确认（升降级横幅 / 绑定页漏斗 / 聊聊按钮是否本期加）', date:'2026-07-06', owner:'产品'},
+    {name:'Push 服务端基建：分层判定 + 每小时批次调度 + 多语言模板 + 深链payload + 推送记录', date:'2026-07-12', owner:'服务端', daily:true},
+    {name:'服务端接口依赖', date:'2026-07-11', owner:'服务端', children:[]},
+    {name:'埋点口径终稿（Push/Paywall/首页引导/麦克风/热点课 事件与参数；热点课埋点对接王宁宁）', date:'2026-07-10', owner:'产品·数据'},
   ];
   window.__DINO_PRES=PRES;
-  var KEY='dino132_pre_done_v1';
+  var KEY='dino140_pre_done_v1';
   var PRE_FEATS=[
-    'Paywall 竖屏改版',
-    '课程升降级（横幅+弹窗+锁态）',
-    'Class·本周上完探索引导卡',
-    '完课后「和 Dino 聊聊」入口',
-    '背包手办 IP/系列分层',
-    'Kakao 登录手机号绑定',
-    '手机号登录去前导 0',
-    '选老师资源优化（对口型替换+预加载）',
-    '登录链路展示优化（loading 双 Dino+宣传页文案）',
-    '学习路径级别卡显示修复（L3/L4）',
-    '多语言文案专项（Dino 不翻译+方括号清理）',
-    'Dino 对话新需求（范围待评审）',
-    'Facebook 登录'
+    '常规 Paywall 收敛（年+月）',
+    '周卡限时折扣页 + 促销频控（挽留/每日启动）',
+    '首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）',
+    'Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）',
+    'Push 深链落地（三场景 + App活跃不弹系统横幅）',
+    '首页 Dino 任务引导条（6态状态机 + TTS播报/说话动效）',
+    '麦克风交互改造（点按开始/结束·收音修复·新手引导·埋点）',
+    '热点课·首页 Banner + 落地页（三态/CMS 下发）',
+    '热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report',
+    '全链路埋点（Push/Paywall/首页引导/麦克风/热点课）'
   ];
-  var PRE_DKEY='dino132_feat_date_v2';
-  var PRE_DDFLT={test:'2026-07-07'};
+  var PRE_DKEY='dino140_feat_date_v2';
+  var PRE_DDFLT={test:'2026-07-11'};
   (function seedChatDates(){try{
-    var k='dino132_feat_date_v2';
+    var k='dino140_feat_date_v2';
     if(!localStorage.getItem(k)){
-      var d={ios:{start:'2026-07-07',test:'2026-07-08'},and:{start:'2026-07-07',test:'2026-07-08'}};
-      localStorage.setItem(k,JSON.stringify({3:d,11:d}));
+      var late={ios:{start:'2026-07-09',test:'2026-07-12'},and:{start:'2026-07-09',test:'2026-07-12'}};
+      localStorage.setItem(k,JSON.stringify({2:late,3:late,4:late,7:late,8:late,9:late}));
     }
   }catch(e){}})();
   function loadDone(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
@@ -580,28 +574,23 @@
   }
   function serviceMatchInfo(name,test){
     var expected=md(test)+' 上午';
-    function vs(serverTest){
-      var late=serverTest>test;
-      return {cls:late?'bad':'ok',tag:'服务端 '+md(serverTest)+' 提测'+(late?' ⚠️ 晚于客户端':'')};
-    }
-    var v;
-    if(name==='课程升降级（横幅+弹窗+锁态）'){v=vs('2026-07-08');return {cls:v.cls,tag:v.tag,lark:'「优化课程升降级逻辑」P1 = 学习计划相关（罗伟·1.5PD·7/7→7/8）+ 课表解锁相关（王槐宝·1.5PD·7/8→7/8）+ 更多课程-跟学习计划相关（未排期）',date:'7/8',owner:'罗伟 / 王槐宝',note:'Lark 排期 7/7 开始、7/8 开发完成+提测——升降级真接口联调只能 7/8 做，7/7 晚主提测先按 mock 提、7/8 回归真接口；服务端标 P1 与客户端 P0 瓶颈定位不一致，风险同步时对齐；附录表 A/B 仍为验收口径；客户端要求 '+expected};}
-    if(name==='背包手办 IP/系列分层'){v=vs('2026-07-07');return {cls:v.cls,tag:v.tag,lark:'「商城中手办增加人物和系列的 tab」P1·1PD（7/7→7/7 提测）；另「手办及剩余皮肤资源更新」P2·0.5PD（7/8）',date:'7/7',owner:'刘阳阳',note:'ip/series 字段与 IP/系列配置随 tab 任务 7/7 提测；手办/剩余皮肤资源 7/8 才更新，不阻塞接口联调但影响置灰/集齐视觉验收；客户端要求 '+expected};}
-    if(name==='Kakao 登录手机号绑定'){v=vs('2026-07-07');return {cls:v.cls,tag:v.tag,lark:'「kakao、facebook 登录（kakao 手机号绑定）-主要是配置」P0·1PD（7/7→7/7 提测）',date:'7/7',owner:'刘阳阳',note:'本版以配置为主，登录能力沿用存量（V2026-06-30「kakao」任务现状仍为「待联调」）；Kakao 手机号返回口径 + 绑定接口字段（phone/country_code/phone_bound）与刘阳阳对齐；客户端要求 '+expected};}
-    if(name==='Facebook 登录'){v=vs('2026-07-07');return {cls:v.cls,tag:v.tag,lark:'与 Kakao 同一任务「kakao、facebook 登录…-主要是配置」P0·1PD（7/7 提测）；存量「新增的三方登录注册（FaceBook、手机号等）」（V2026-06-30）现状「待联调」',date:'7/7',owner:'刘阳阳',note:'修正旧口径：Lark 上并非「已提测」——存量任务是「待联调」，本版配置任务 7/7 提测；token 校验/账号关联口径确认后随 Kakao 一起联调；客户端双端接入 FB SDK；客户端要求 '+expected};}
-    if(name==='Class·本周上完探索引导卡'){v=vs('2026-07-08');return {cls:v.cls,tag:v.tag,lark:'「class引导：一周完课后引导到practice中去；每个lesson完课引导到dino中」P2·0.5PD（7/8→7/8 提测）',date:'7/8',owner:'罗伟',note:'服务端 7/8 才开始+提测——引导卡「本周完成」判断/路由下发联调压到 7/8；同一任务还覆盖「聊聊入口」的 lesson 完课引导（客户端 7/8 晚补提测，节奏对齐）；客户端要求 '+expected};}
-    if(name==='手机号登录去前导 0')return {cls:'bad',tag:'Lark 未建任务 ⚠️',lark:'未找到对应任务（按「前导/去0/标准化」检索 0 条）；相邻仅「手机号登录增加国家地区：马来西亚、印尼」P0·2PD（7/9→7/10 提测，晚于 7/9 提审，不随本班车）',date:'未排期',owner:'待确认（手机号侧现为刘阳阳）',note:'后端「+0 / 不加 0」双格式兼容在 Lark 无任务——7/7 需确认并入 kakao/facebook 配置任务或补建任务，否则只能客户端单侧去 0 兜底；客户端要求 '+expected};
-    if(name==='登录链路展示优化（loading 双 Dino+宣传页文案）')return {cls:'info',tag:'疑似 = onboarding 替换 · 7/8',lark:'无「宣传页文案下发」独立任务；疑似对应「onboarding 相关资源、文字、图片的替换」0.5PD（7/8 提测·开发完成标 7/9）',date:'7/8',owner:'王槐宝',note:'需与王槐宝确认宣传页对话文案是否含在 onboarding 资源替换内、是否做成服务端可更新下发；loading 双 Dino 为纯客户端；客户端要求 '+expected};
-    if(name==='Dino 对话新需求（范围待评审）'){v=vs('2026-07-07');return {cls:v.cls,tags:[{text:'开发中',cls:'info'},{text:v.tag}],tag:v.tag,lark:'「原Dino AI改名Dino Daily后端支持」P0·1.5PD（7/6→7/7 提测·开发中·备注：跟 9 号版本一起上）；关联「首页dino的引导（未完成体验课引导去上体验课）」罗伟·1PD·需求待评审（排 7/6）',date:'7/7',owner:'王槐宝',note:'范围已落地为「Dino AI 更名 Dino Daily」后端支持，服务端先于客户端 7/8 晚补提测节奏；「首页 dino 引导」仍在需求待评审，需尽快拍范围；客户端要求 '+expected};}
+    function todo(lark,note){return {cls:'info',tag:'待确认 · Lark 后端排期未匹配',lark:lark,date:'待排期',owner:'待确认',note:note+'；客户端要求 '+expected};}
+    if(name==='周卡限时折扣页 + 促销频控（挽留/每日启动）')return todo('本期新增，Lark「服务端任务管理」暂无匹配任务','后端下发划线倍数（当前1.5→划线价$16.49/33%OFF）+ 分触点频控字段 last_winback_ts / last_daily_offer_ts + is_member；「当日」按设备本地日判定');
+    if(name==='首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）')return todo('Vercel 付费引导 PRD（V3 MVP 卡片版）· 后端未在 Lark 建任务','后端注入会员态 + 24h 已推标记，解析 paid_guide_invite marker、写会话已推状态、扩展体验课卡下发接口带 Paywall 落点；对话引擎输出 marker + 中性引导语（5%灰度）');
+    if(name==='Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）')return todo('复用现有 Firebase；token 绑定/解绑与授权上报接口待后端确认','客户端上报 fcm_token / push_authorization_status / device_timezone；登录绑 token、登出清除该设备 token、多账号只推当前登录账号、多设备全量下发');
+    if(name==='Push 深链落地（三场景 + App活跃不弹系统横幅）')return todo('依赖 Push 服务端基建（分层判定 + 每小时跑批 + 深链 payload 路由）','三场景深链 payload（体验课 / 学习计划页 / Class tab）+ 每场景推送记录（累计次数上限；S3 带解锁批次标识判「未提醒过」）需后端约定');
+    if(name==='首页 Dino 任务引导条（6态状态机 + TTS播报/说话动效）')return todo('需后端提供状态位接口（启动/登录下发 + 进/切回 Dino tab 刷新）','下发 trial_started / trial_finished / is_member / 断点位置 / 是否存在已解锁·未完成正式课 / learner 名；断点续上后端已支持');
+    if(name==='热点课·首页 Banner + 落地页（三态/CMS 下发）')return todo('热点课 PRD · CMS 运营后台配置（免发版），Lark 后端排期未匹配','活动起止/三态一律服务端为准（防改本地时间绕过），Banner+落地页素材与配置由 CMS 下发；老版本按最低版本号不下发');
+    if(name==='热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report')return todo('热点课 PRD · 课件协议复用现有数字人课堂，Lark 后端排期未匹配','active theme course 判定、完课独立记账 event_lesson_completed、断点续上；E3 与周卡折扣页频控排他（折扣优先，频控满才推足球课弹窗）');
     return null;
   }
   function refreshServicePres(){
     var group=null;
     PRES.forEach(function(p){if(p.name==='服务端接口依赖')group=p;});
     if(!group)return;
-    var latest='2026-07-06',children=[];
+    var latest='2026-07-09',children=[];
     PRE_FEATS.forEach(function(name,i){
-      if(['课程升降级（横幅+弹窗+锁态）','背包手办 IP/系列分层','Kakao 登录手机号绑定','Facebook 登录','Class·本周上完探索引导卡','手机号登录去前导 0','登录链路展示优化（loading 双 Dino+宣传页文案）','Dino 对话新需求（范围待评审）'].indexOf(name)<0)return;
+      if(['周卡限时折扣页 + 促销频控（挽留/每日启动）','首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）','Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）','Push 深链落地（三场景 + App活跃不弹系统横幅）','首页 Dino 任务引导条（6态状态机 + TTS播报/说话动效）','热点课·首页 Banner + 落地页（三态/CMS 下发）','热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report'].indexOf(name)<0)return;
       var test=preFinalTest(i),doc=shiftDate(test,-1);
       var depName=name;
       var svc=serviceMatchInfo(name,test);
@@ -685,8 +674,8 @@
       h+='<div class="svc-meta"><b>Lark对应：</b>'+svc.lark+'｜'+svc.note+'</div>';
       h+='</div>';
     });
-    h+='<div class="svc-card info"><div class="svc-top"><div class="svc-name">📋 Lark 其余服务端排期（V2026-07-09 · 参考）</div><div class="svc-tags"><span class="svc-tag info">2026-07-07 同步</span></div></div>';
-    h+='<div class="svc-meta"><b>不在 8 块接口依赖内：</b>埋点 firebase/appsflyer（王槐宝·1PD·7/6·开发中）｜play 题目资源变更（董鹏·0.5PD·7/7）｜Dino 多语言相关（刘阳阳·0.5PD·7/8）｜选择老师资源调整（刘阳阳·0.5PD·7/8）——多语言/选老师客户端按免联调推进，但服务端有资源任务，关注 7/8 资源就位｜手机号新增国家 马来西亚/印尼（刘阳阳·2PD·7/10 提测，晚于 7/9 提审，不随本班车；子项 bytePlus 短信供应商商务流程未走完）｜Dino English CRM 管台（罗伟·7/13 提测：构建 CICD/登录鉴权已完成，订单/用户中心开发中，不阻塞客户端班车）</div></div>';
+    h+='<div class="svc-card info"><div class="svc-top"><div class="svc-name">📋 服务端归属待确认（Lark「服务端任务管理」未匹配）</div><div class="svc-tags"><span class="svc-tag info">待 7/9 评审确认</span></div></div>';
+    h+='<div class="svc-meta"><b>本版服务端依赖尚未在 Lark 建/匹配任务</b>，需 7/9 评审后与后端确认归属与提测时间：<b>Push 基建</b>（分层判定 S1/S2/S3 + 每小时批次调度 + 多语言模板 + 深链 payload + 每场景推送记录）｜<b>促销频控</b>（划线倍数下发 + last_winback_ts / last_daily_offer_ts）｜<b>对话付费</b>（paid_guide_invite marker 解析 + 会员态 / 24h 注入）｜<b>首页 Dino 状态位接口</b>｜<b>世界杯 CMS</b>（活动配置免发版下发 + 三态 + active theme course 判定）｜<b>周解锁生效时刻归一本地日 00:00</b>（需后端评估）。热点课埋点研发对接 <b>王宁宁</b>（PRD 指定）。</div></div>';
     return h;
   }
   function render(){
@@ -721,7 +710,7 @@
     var da=document.getElementById('daily-alert');
     if(dailyPending.length>0){
       da.style.display='block';
-      da.innerHTML='🔔 <b>每日必看</b>：7/9 提审是极限班车——评审拍板、对口型资源、Kakao 口径任何一项拖过 7/7 都会掉车——以下 <b>'+dailyPending.length+'</b> 项尚未完成，<b>今天就推进</b>：'+dailyPending.map(function(p){return p.name+'（'+p.date.slice(5)+'，'+(p.days<0?'已逾期'+(-p.days)+'天':p.days===0?'今天截止':'剩'+p.days+'天')+'）';}).join('；');
+      da.innerHTML='🔔 <b>每日必看</b>：7/15 上线是极限压缩班车——世界杯课件/CMS、Push 服务端基建任何一项拖过 7/11–7/12 都会掉车——以下 <b>'+dailyPending.length+'</b> 项尚未完成，<b>今天就推进</b>：'+dailyPending.map(function(p){return p.name+'（'+p.date.slice(5)+'，'+(p.days<0?'已逾期'+(-p.days)+'天':p.days===0?'今天截止':'剩'+p.days+'天')+'）';}).join('；');
     }else{da.style.display='none';}
     var parts=[],next=null;
     var pend=leaves.filter(function(p){return !p.done;}).sort(function(a,b){return a.days-b.days;});
@@ -763,7 +752,7 @@
   render();
 })();
 (function(){
-  var CKEY='dino132_collapsed_v1';
+  var CKEY='dino140_collapsed_v1';
   function loadC(){try{return JSON.parse(localStorage.getItem(CKEY)||'[]');}catch(e){return[];}}
   function saveC(a){try{localStorage.setItem(CKEY,JSON.stringify(a));}catch(e){}}
   var collapsed=loadC();
@@ -788,42 +777,99 @@
     try{
       for(var i=0;i<localStorage.length;i++){
         var k=localStorage.key(i);
-        if(!k||k.indexOf('dino132_')!==0)continue;
+        if(!k||k.indexOf('dino140_')!==0)continue;
         var v=localStorage.getItem(k);
         if(v&&v.indexOf(from)>=0)localStorage.setItem(k,v.split(from).join(to));
       }
     }catch(e){}
   }
-  migrateStoredName('高焰','');
+  // (V1.4.0：无历史姓名迁移)
   var FEATS=[
-    {n:'Paywall 竖屏改版', ios:'付玉佳', and:'郭浦然'},
-    {n:'课程升降级（横幅+弹窗+锁态）', ios:'', and:'魏博源'},
-    {n:'Class·本周上完探索引导卡', ios:'', and:'魏博源'},
-    {n:'完课后「和 Dino 聊聊」入口', ios:'燕航', and:'郭武鑫'},
-    {n:'背包手办 IP/系列分层', ios:'贾宾', and:'沈延涛'},
-    {n:'Kakao 登录手机号绑定', ios:'王宁宁', and:'杨金鹏'},
-    {n:'手机号登录去前导 0', ios:'王宁宁', and:'杨金鹏'},
-    {n:'选老师资源优化（对口型替换+预加载）', ios:'刘亚平', and:'李政'},
-    {n:'登录链路展示优化（loading 双 Dino+宣传页文案）', ios:'王宁宁', and:'杨金鹏'},
-    {n:'学习路径级别卡显示修复（L3/L4）', ios:'', and:'魏博源'},
-    {n:'多语言文案专项（Dino 不翻译+方括号清理）', ios:'刘亚平', and:'李政'},
-    {n:'Dino 对话新需求（范围待评审）', ios:'燕航', and:'郭武鑫'},
-    {n:'Facebook 登录', ios:'付玉佳', and:'郭浦然'}
+    {n:'常规 Paywall 收敛（年+月）', ios:'付玉佳', and:'郭浦然'},
+    {n:'周卡限时折扣页 + 促销频控（挽留/每日启动）', ios:'付玉佳', and:'郭浦然'},
+    {n:'首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）', ios:'燕航', and:'郭武鑫'},
+    {n:'Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）', ios:'王宁宁', and:'杨金鹏'},
+    {n:'Push 深链落地（三场景 + App活跃不弹系统横幅）', ios:'王宁宁', and:'杨金鹏'},
+    {n:'首页 Dino 任务引导条（6态状态机 + TTS播报/说话动效）', ios:'燕航', and:'郭武鑫'},
+    {n:'麦克风交互改造（点按开始/结束·收音修复·新手引导·埋点）', ios:'刘亚平', and:'李政'},
+    {n:'热点课·首页 Banner + 落地页（三态/CMS 下发）', ios:'贾宾', and:'魏博源'},
+    {n:'热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report', ios:'贾宾', and:'沈延涛·李永祺'},
+    {n:'全链路埋点（Push/Paywall/首页引导/麦克风/热点课）', ios:'刘亚平', and:'李政'}
   ];
+  // —— 大类分组：把 11 个功能归到 5 个大类；idx 为 FEATS 下标，编号（①②…）仍沿用 FEATS 原顺序 ——
+  var CATS=[
+    {name:'转化链路 · Paywall', cls:'c-paywall', idx:[0,1]},
+    {name:'首页 Dino · 对话',   cls:'c-dino',    idx:[2,5,6]},
+    {name:'推送 Push',          cls:'c-push',    idx:[3,4]},
+    {name:'热点课 · 世界杯',    cls:'c-theme',   idx:[7,8]},
+    {name:'埋点',               cls:'c-other',   idx:[9]}
+  ];
+  function catStats(cat,st){
+    var total=cat.idx.length*2,done=0,ready=0,blocked=0,notstart=0;
+    cat.idx.forEach(function(i){
+      [st['i'+i]||'未开始',st['a'+i]||'未开始'].forEach(function(s){
+        if(s==='完成')done++;
+        if(s==='已提测'||s==='验收中'||s==='完成')ready++;
+        if(s==='🚩阻塞')blocked++;
+        if(s==='未开始')notstart++;
+      });
+    });
+    return {total:total,done:done,ready:ready,blocked:blocked,notstart:notstart};
+  }
+  // —— 大类 Owner（每个大类一个负责人，可改、存本机；默认取该大类主力，可在「按大类·功能」Tab 下拉调整）——
+  var COKEY='dino140_cat_owner_v1';
+  function loadCO(){try{return JSON.parse(localStorage.getItem(COKEY)||'{}');}catch(e){return{};}}
+  function saveCO(o){try{localStorage.setItem(COKEY,JSON.stringify(o));}catch(e){}}
+  var CAT_DFLT_OWNER={'c-paywall':'付玉佳','c-dino':'燕航','c-push':'王宁宁','c-theme':'贾宾','c-other':'刘亚平'};
+  function catOwnerPool(cat){
+    var seen={},out=[];
+    function add(p){p=(p||'').replace(/\s+/g,'');if(p&&!seen[p]){seen[p]=1;out.push(p);}}
+    cat.idx.forEach(function(i){listOf(i,'ios').forEach(add);listOf(i,'and').forEach(add);});
+    IOS_ORDER.concat(AND_ORDER).forEach(add);
+    return out;
+  }
+  function getCatOwner(cat){var ov=loadCO();if(typeof ov[cat.cls]==='string'&&ov[cat.cls])return ov[cat.cls];return CAT_DFLT_OWNER[cat.cls]||catOwnerPool(cat)[0]||'';}
+  function setCatOwner(cls,val){var ov=loadCO();if(val)ov[cls]=val;else delete ov[cls];saveCO(ov);}
+  function catOwnerSelectHTML(cat){
+    var cur=getCatOwner(cat),pool=catOwnerPool(cat);
+    if(cur&&pool.indexOf(cur)<0)pool.unshift(cur);
+    var h='<select class="cat-owner-sel" data-cls="'+cat.cls+'"><option value="">未指定</option>';
+    pool.forEach(function(p){h+='<option value="'+p.replace(/"/g,'&quot;')+'"'+(p===cur?' selected':'')+'>'+p+'</option>';});
+    return h+'</select>';
+  }
+  // —— 长期 App 开发需求（不跟版本）：开发进度看板里的独立大类；无提测节点、单状态、不进版本 20 端次统计与人员甘特 ——
+  var LONGTERM=[
+    {n:'数字人 + 现有 Lottie 优化 + 资源产出平台 + 完整产出流程', own:'贾宾 · 沈延涛', tag:'平台/资源', tcls:'plat', note:'需先与晓宇沟通数字人方案；含现有 Lottie 优化、资源产出平台与完整产出流程打通'},
+    {n:'UI skill 持续优化', own:'李永祺', tag:'效能', tcls:'eff', note:'UI 生成 / 还原 skill 持续打磨，提升 UI 开发效率与一致性'},
+    {n:'自动化测试 skill【断言 & UI】持续优化', own:'魏博源', tag:'质量/自动化', tcls:'qa', note:'断言 & UI 两类自动化测试能力持续建设与优化'},
+    {n:'App 性能专项（崩溃 / 卡顿 / 内存 / 帧率 等）', own:'魏博源', tag:'性能专项', tcls:'perf', note:'不限于崩溃、卡顿、内存、帧率等问题的持续治理；原 V1.3.2 崩溃修复专项已并入'},
+    {n:'课中 native 重构', own:'李政 · 刘亚平', tag:'重构', tcls:'refac', note:'课中链路 native 化重构，提升课堂性能与可维护性'},
+    {n:'【KMP】跨端方案调研', own:'魏博源', tag:'调研', tcls:'res', note:'Kotlin Multiplatform 跨端方案调研，评估双端共享可行性'}
+  ];
+  var LT_STATES=['待启动','调研中','进行中','持续优化','已暂停','已完成'];
+  var LTSCLS={'待启动':'s0','调研中':'s1','进行中':'s2','持续优化':'s4','已暂停':'sx','已完成':'s5'};
+  var LT_DFLT={0:'待启动',1:'持续优化',2:'持续优化',3:'进行中',4:'待启动',5:'调研中'};
+  var LTKEY='dino140_longterm_status_v1';
+  function loadLTS(){try{return JSON.parse(localStorage.getItem(LTKEY)||'{}');}catch(e){return{};}}
+  function saveLTS(o){try{localStorage.setItem(LTKEY,JSON.stringify(o));}catch(e){}}
+  function getLTS(li){var o=loadLTS();if(typeof o[li]==='string'&&o[li])return o[li];return LT_DFLT[li]||'进行中';}
+  function setLTS(li,val){var o=loadLTS();if(val)o[li]=val;else delete o[li];saveLTS(o);}
+  function ltActiveCount(){var n=0;LONGTERM.forEach(function(it,li){var s=getLTS(li);if(s!=='待启动'&&s!=='已暂停'&&s!=='已完成')n++;});return n;}
+  function ltOpts(cur){var h='';LT_STATES.forEach(function(s){h+='<option value="'+s+'"'+(s===cur?' selected':'')+'>'+s+'</option>';});return h;}
   var STATES=['未开始','UI开发中','联调中','已提测','验收中','完成','🚩阻塞'];
   var SCLS={'未开始':'s0','UI开发中':'s1','联调中':'s2','已提测':'s3','验收中':'s4','完成':'s5','🚩阻塞':'sx'};
-  var SKEY='dino132_status_v1';
+  var SKEY='dino140_status_v1';
   function loadS(){try{return JSON.parse(localStorage.getItem(SKEY)||'{}');}catch(e){return{};}}
   function saveS(o){try{localStorage.setItem(SKEY,JSON.stringify(o));}catch(e){}}
-  var SRKEY='dino132_status_reason_v1';
+  var SRKEY='dino140_status_reason_v1';
   function loadReasons(){try{return JSON.parse(localStorage.getItem(SRKEY)||'{}');}catch(e){return{};}}
   function saveReasons(o){try{localStorage.setItem(SRKEY,JSON.stringify(o));}catch(e){}}
   function opts(cur){var h='';STATES.forEach(function(s){h+='<option value="'+s+'"'+(s===cur?' selected':'')+'>'+s+'</option>';});return h;}
   var IOS_ORDER=['王宁宁','付玉佳','燕航','贾宾','刘亚平'];
-  var AND_ORDER=['魏博源','杨金鹏','郭浦然','郭武鑫','沈延涛','李政'];
-  var PCT={'燕航':'7/7下午起','郭武鑫':'7/7下午起'};
+  var AND_ORDER=['魏博源','杨金鹏','郭浦然','郭武鑫','沈延涛','李政','李永祺'];
+  var PCT={};
   // —— 开发人员分工：可在「按功能」Tab 变更，「按人」Tab 与日报自动跟随。状态按「功能×端」记录，换人不丢状态 ——
-  var AKEY='dino132_feat_assign_v1';
+  var AKEY='dino140_feat_assign_v1';
   function loadA(){try{return JSON.parse(localStorage.getItem(AKEY)||'{}');}catch(e){return{};}}
   function saveA(o){try{localStorage.setItem(AKEY,JSON.stringify(o));}catch(e){}}
   function getAssign(i,side){var ov=loadA();if(ov[i]&&typeof ov[i][side]==='string')return ov[i][side];return FEATS[i][side]||'';}
@@ -832,7 +878,7 @@
   function addPerson(i,side,name){name=(name||'').replace(/\s+/g,'');if(!name)return;var l=listOf(i,side);if(l.indexOf(name)<0){l.push(name);setAssign(i,side,l.join('·'));}}
   function removePerson(i,side,name){setAssign(i,side,listOf(i,side).filter(function(p){return p!==name;}).join('·'));}
   function effectiveOrder(baseOrder,side){var seen={},out=[];baseOrder.forEach(function(p){if(!seen[p]){seen[p]=1;out.push(p);}});FEATS.forEach(function(f,i){listOf(i,side).forEach(function(p){if(!seen[p]){seen[p]=1;out.push(p);}});});return out;}
-  var OKEY='dino132_feat_owner_v1';
+  var OKEY='dino140_feat_owner_v1';
   function loadO(){try{return JSON.parse(localStorage.getItem(OKEY)||'{}');}catch(e){return{};}}
   function saveO(o){try{localStorage.setItem(OKEY,JSON.stringify(o));}catch(e){}}
   function ownerPool(i){
@@ -849,9 +895,9 @@
     return ownerPool(i)[0]||'';
   }
   function setOwner(i,val){var ov=loadO();if(val)ov[i]=val;else delete ov[i];saveO(ov);}
-  // —— 每个功能「各端」的开始 / 提测时间（在「按功能」Tab 维护，存本机；默认基线 7/6 起、7/7 提测；对话两项已种子为 7/7 起、7/8 提测）——
-  var DKEY='dino132_feat_date_v2';
-  var DDFLT={start:'2026-07-06',test:'2026-07-07'};
+  // —— 每个功能「各端」的开始 / 提测时间（在「按功能」Tab 维护，存本机；默认基线 7/9 起、7/11 提测；Push / 热点课 / 对话付费 / 埋点 已种子为 7/9 起、7/12 补提测）——
+  var DKEY='dino140_feat_date_v2';
+  var DDFLT={start:'2026-07-09',test:'2026-07-11'};
   function loadDt(){try{return JSON.parse(localStorage.getItem(DKEY)||'{}');}catch(e){return{};}}
   function saveDt(o){try{localStorage.setItem(DKEY,JSON.stringify(o));}catch(e){}}
   function getDate(i,side,kind){var o=loadDt();if(o[i]&&o[i][side]&&typeof o[i][side][kind]==='string')return o[i][side][kind];return DDFLT[kind]||'';}
@@ -883,29 +929,26 @@
     return today.getFullYear()+'-'+('0'+(today.getMonth()+1)).slice(-2)+'-'+('0'+today.getDate()).slice(-2);
   }
   function shortName(n){
-    return n.replace('Paywall 竖屏改版','Paywall竖屏')
-      .replace('课程升降级（横幅+弹窗+锁态）','课程升降级')
-      .replace('Class·本周上完探索引导卡','探索引导卡')
-      .replace('完课后「和 Dino 聊聊」入口','聊聊入口')
-      .replace('背包手办 IP/系列分层','手办分层')
-      .replace('Kakao 登录手机号绑定','Kakao绑定')
-      .replace('手机号登录去前导 0','去前导0')
-      .replace('选老师资源优化（对口型替换+预加载）','选老师资源')
-      .replace('登录链路展示优化（loading 双 Dino+宣传页文案）','登录展示优化')
-      .replace('学习路径级别卡显示修复（L3/L4）','级别卡修复')
-      .replace('多语言文案专项（Dino 不翻译+方括号清理）','多语言专项')
-      .replace('Dino 对话新需求（范围待评审）','Dino对话新需求')
-      .replace('Facebook 登录','FB登录');
+    return n.replace('常规 Paywall 收敛（年+月）','Paywall收敛')
+      .replace('周卡限时折扣页 + 促销频控（挽留/每日启动）','折扣页+频控')
+      .replace('首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）','对话付费卡')
+      .replace('Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）','Push接入')
+      .replace('Push 深链落地（三场景 + App活跃不弹系统横幅）','Push深链')
+      .replace('首页 Dino 任务引导条（6态状态机 + TTS播报/说话动效）','首页Dino引导')
+      .replace('麦克风交互改造（点按开始/结束·收音修复·新手引导·埋点）','麦克风改造')
+      .replace('热点课·首页 Banner + 落地页（三态/CMS 下发）','热点课Banner+落地页')
+      .replace('热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report','热点课弹窗+课中')
+      .replace('全链路埋点（Push/Paywall/首页引导/麦克风/热点课）','全链路埋点');
   }
-  function needServerLink(name){return ['课程升降级（横幅+弹窗+锁态）','背包手办 IP/系列分层','Kakao 登录手机号绑定','Facebook 登录','Class·本周上完探索引导卡','手机号登录去前导 0','登录链路展示优化（loading 双 Dino+宣传页文案）','Dino 对话新需求（范围待评审）'].indexOf(name)>=0;}
-  function showLinkMarker(name){return needServerLink(name)||name==='完课后「和 Dino 聊聊」入口';}
-  function linkLabel(name){if(name==='完课后「和 Dino 聊聊」入口')return '对话对齐';return '联调';}
+  function needServerLink(name){return ['周卡限时折扣页 + 促销频控（挽留/每日启动）','首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）','Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）','Push 深链落地（三场景 + App活跃不弹系统横幅）','首页 Dino 任务引导条（6态状态机 + TTS播报/说话动效）','热点课·首页 Banner + 落地页（三态/CMS 下发）','热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report'].indexOf(name)>=0;}
+  function showLinkMarker(name){return needServerLink(name);}
+  function linkLabel(name){return '联调';}
   function linkTitle(name,test){return needServerLink(name)?('接口可联调状态｜'+test+' 上午｜提测前半天给到'):(linkLabel(name)+'｜'+test+' 上午');}
   function renderPeopleSchedule(){
     var root=document.getElementById('people-schedule');
     if(!root)return;
     var st=loadS();
-    var base=new Date('2026-07-06T00:00:00');
+    var base=new Date('2026-07-09T00:00:00');
     var pct=8;
     function dayIndex(d){return Math.round((new Date(d+'T00:00:00')-base)/86400000);}
     function pos(d){return Math.max(0,Math.min(96,dayIndex(d)*pct));}
@@ -919,12 +962,12 @@
       if(state==='🚩阻塞')return 'b-no';
       if(state==='已提测'||state==='验收中')return 'b-test';
       if(state==='完成')return 'b-pv';
-      if(/升降级|Paywall|Kakao|Facebook|选老师|Dino 对话/.test(name))return 'b-warn';
+      if(/热点课|Push|折扣页|对话付费/.test(name))return 'b-warn';
       return 'b-dev';
     }
     function axisHTML(){
-      var days=['7/6','7','8','9','10','11','12','13','14','15','16','17'];
-      var cls=['key','pt','','key','','we','key','','','','',''];
+      var days=['7/9','10','11','12','13','14','15','16','17','18','19','20'];
+      var cls=['key','','pt','pt','key','','key','','','we','we',''];
       var h='<div class="gh"><div class="lab"></div><div class="axis">';
       days.forEach(function(d,i){h+='<div class="d '+cls[i]+'">'+d+'</div>';});
       return h+'</div></div>';
@@ -945,7 +988,7 @@
         var tasks=(map[p]||[]).sort(function(a,b){return a.start===b.start?a.test.localeCompare(b.test):a.start.localeCompare(b.start);});
         if(!tasks.length)return;
         var laneH=Math.max(30,tasks.length*24+6);
-        h+='<div class="track" style="min-height:'+laneH+'px"><div class="lab">'+esc(p)+' <small>'+(PCT[p]||'')+'</small></div><div class="lane" style="height:'+laneH+'px"><div class="vline" style="left:12%"></div>';
+        h+='<div class="track" style="min-height:'+laneH+'px"><div class="lab">'+esc(p)+' <small>'+(PCT[p]||'')+'</small></div><div class="lane" style="height:'+laneH+'px"><div class="vline" style="left:16%"></div>';
         tasks.forEach(function(t,idx){
           var state=st[t.key]||'未开始';
           var mainEnd=needServerLink(t.name)?shiftDateLocal(t.test,-1):t.test;
@@ -962,9 +1005,9 @@
       +sideHTML('iOS 端（跟随看板开始 / 提测时间）','ios',iosOrder,collect('ios','i'))
       +sideHTML('Android 端（跟随看板开始 / 提测时间）','android',andOrder,collect('and','a'))
       +'<div class="grp qa">职能角色（固定里程碑）</div>'
-      +'<div class="track"><div class="lab">产品 <small>口径/验收</small></div><div class="lane"><div class="vline" style="left:12%"></div><div class="bar b-pre" style="left:0%;width:8%">评审+拍板</div><div class="bar b-pre" style="left:8%;width:8%">口径/文案</div><div class="bar b-pv" style="left:24%;width:6%">验</div></div></div>'
-      +'<div class="track"><div class="lab">设计 <small>视觉/验收</small></div><div class="lane"><div class="vline" style="left:12%"></div><div class="bar b-pre" style="left:0%;width:16%">设计首批 7/6 → 7/7</div><div class="bar b-link" style="left:16%;width:8%">UI验收①</div><div class="bar b-link" style="left:24%;width:4%">②</div></div></div>'
-      +'<div class="track"><div class="lab">QA <small>双端</small></div><div class="lane"><div class="vline" style="left:12%"></div><div class="bar b-test" style="left:16%;width:16%">7/7晚提测 → 回归+TF</div></div></div>';
+      +'<div class="track"><div class="lab">产品 <small>口径/验收</small></div><div class="lane"><div class="vline" style="left:16%"></div><div class="bar b-pre" style="left:0%;width:8%">评审+拍板</div><div class="bar b-pre" style="left:8%;width:8%">口径/文案</div><div class="bar b-pv" style="left:32%;width:6%">验</div></div></div>'
+      +'<div class="track"><div class="lab">设计 <small>视觉/验收</small></div><div class="lane"><div class="vline" style="left:16%"></div><div class="bar b-pre" style="left:0%;width:24%">设计首批 7/9 → 7/11</div><div class="bar b-link" style="left:16%;width:8%">UI验收①</div><div class="bar b-link" style="left:24%;width:6%">②</div></div></div>'
+      +'<div class="track"><div class="lab">QA <small>双端</small></div><div class="lane"><div class="vline" style="left:16%"></div><div class="bar b-test" style="left:16%;width:24%">7/11晚提测 → 回归+TF</div></div></div>';
   }
   function renderTodayTasks(){
     var root=document.getElementById('today-list'),prog=document.getElementById('today-prog');
@@ -1030,6 +1073,23 @@
     document.getElementById('status-prog').textContent='完成 '+done+' / '+total;
     var sum='<span class="sb sb-rd">提测就绪 '+ready+' / '+total+'</span><span class="sb sb-dn">完成 '+done+'</span>'+(blocked>0?'<span class="sb sb-bk">🚩 阻塞 '+blocked+'</span>':'')+'<span class="sb sb-ns">未开始 '+notstart+'</span>';
     document.getElementById('status-summary').innerHTML=sum;
+    // —— 按大类拆分（完成 / 提测就绪 / 阻塞）——
+    var catsEl=document.getElementById('status-cats');
+    if(catsEl){
+      var ch='';
+      CATS.forEach(function(cat){
+        var cs=catStats(cat,st),p=cs.total?Math.round(cs.ready/cs.total*100):0;
+        ch+='<div class="catcard '+cat.cls+(cs.blocked?' has-blk':'')+'">'
+          +'<div class="catcard-h"><span>'+cat.name+'</span><span class="catcard-n">'+cat.idx.length+' 功能 · '+cs.total+' 端次</span></div>'
+          +'<div class="catcard-o">Owner <b>'+(getCatOwner(cat)||'未指定')+'</b></div>'
+          +'<div class="catcard-bar"><span style="width:'+p+'%"></span></div>'
+          +'<div class="catcard-m">提测就绪 <b>'+cs.ready+'/'+cs.total+'</b> · 完成 <b>'+cs.done+'</b>'+(cs.blocked?' · <b class="blk">🚩'+cs.blocked+'</b>':'')+'</div>'
+          +'</div>';
+      });
+      var lta=ltActiveCount();
+      ch+='<div class="catcard c-lt"><div class="catcard-h"><span>🧭 长期 App 需求</span><span class="catcard-n">'+LONGTERM.length+' 项 · 不跟版本</span></div><div class="catcard-o">多 Owner · 无提测节点</div><div class="catcard-bar"><span style="width:'+Math.round(lta/LONGTERM.length*100)+'%"></span></div><div class="catcard-m">已启动 <b>'+lta+'/'+LONGTERM.length+'</b> · 持续推进</div></div>';
+      catsEl.innerHTML=ch;
+    }
     var blk='';
     FEATS.forEach(function(f,i){
       [['i'+i,'iOS',getAssign(i,'ios')],['a'+i,'Android',getAssign(i,'and')]].forEach(function(pr){
@@ -1053,8 +1113,8 @@
     var now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
     var WK=['日','一','二','三','四','五','六'];
     var dstr=('0'+(today.getMonth()+1)).slice(-2)+'/'+('0'+today.getDate()).slice(-2)+'（周'+WK[today.getDay()]+'）';
-    var test=new Date(2026,6,7),dleft=Math.round((test-today)/86400000);
-    var dtext=dleft>0?('距 7/7 晚主提测还剩 '+dleft+' 天'):(dleft===0?'今天就是 7/7 主提测日':('7/7 主提测已过 '+(-dleft)+' 天'));
+    var test=new Date(2026,6,11),dleft=Math.round((test-today)/86400000);
+    var dtext=dleft>0?('距 7/11 晚主提测还剩 '+dleft+' 天'):(dleft===0?'今天就是 7/11 主提测日':('7/11 主提测已过 '+(-dleft)+' 天'));
     // —— 开发进度统计 + 阻塞收集 ——
     var total=FEATS.length*2,done=0,ready=0,blocked=0,blk=[];
     FEATS.forEach(function(f,i){
@@ -1067,7 +1127,7 @@
     });
     // —— 前置 Deadline（未完成项恒显，作为常驻提醒）——
     var PRES=window.__DINO_PRES||[];
-    var preDone=[];try{preDone=JSON.parse(localStorage.getItem('dino132_pre_done_v1')||'[]');}catch(e){}
+    var preDone=[];try{preDone=JSON.parse(localStorage.getItem('dino140_pre_done_v1')||'[]');}catch(e){}
     function collectPreLeaves(list){
       var out=[];
       list.forEach(function(p){
@@ -1115,20 +1175,26 @@
     var state=(od.length||blocked)?'🔴 有风险':(d0.length?'🟡 偏紧':(ready>=total*0.6?'🟢 在控':(ready===0?'🟢 在控（待开工）':'🟡 推进中')));
     // —— 逐条开发进度（每个任务·双端·谁·什么状态）——
     var CN=['①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩','⑪','⑫'];
-    var devLines=FEATS.map(function(f,i){
-      var si=st['i'+i]||'未开始',sa=st['a'+i]||'未开始';
-      return (CN[i]||(i+1)+'.')+' '+f.n+'\n　iOS '+(getAssign(i,'ios')||'未分配')+' 〔'+si+'〕 ｜ 安卓 '+(getAssign(i,'and')||'未分配')+' 〔'+sa+'〕';
-    }).join('\n');
+    var devLines=CATS.map(function(cat){
+      var cs=catStats(cat,st);
+      var head='【'+cat.name+'】Owner '+(getCatOwner(cat)||'未指定')+'｜就绪 '+cs.ready+'/'+cs.total+'・完成 '+cs.done+(cs.blocked?'・🚩'+cs.blocked:'');
+      var lines=cat.idx.map(function(i){
+        var f=FEATS[i],si=st['i'+i]||'未开始',sa=st['a'+i]||'未开始';
+        return (CN[i]||(i+1)+'.')+' '+f.n+'\n　iOS '+(getAssign(i,'ios')||'未分配')+' 〔'+si+'〕 ｜ 安卓 '+(getAssign(i,'and')||'未分配')+' 〔'+sa+'〕';
+      }).join('\n');
+      return head+'\n'+lines;
+    }).join('\n\n');
     // —— 里程碑链（结合今天日期算倒计时）——
     function cd(dateStr){
       var d=new Date(dateStr+'T00:00:00'),days=Math.round((d-today)/86400000);
       return days>0?('剩 '+days+' 天'):(days===0?'就在今天 ⚠️':('已过 '+(-days)+' 天'));
     }
     var MS=[
-      ['🧪','主提测','7/7 晚','2026-07-07'],
-      ['🧪','补提测（聊聊入口+Dino对话）','7/8 晚','2026-07-08'],
-      ['📦','TF 验证 + 产品验收','7/9 上午','2026-07-09'],
-      ['🚀','提审（最后节点）','7/9 下午','2026-07-09']
+      ['🧪','主提测','7/11 晚','2026-07-11'],
+      ['🧪','补提测（Push/热点课/对话付费/埋点）','7/12','2026-07-12'],
+      ['📦','TF 验证 + 产品验收','7/13 上午','2026-07-13'],
+      ['🚀','提审','7/13 下午','2026-07-13'],
+      ['🚀','上线（目标）','7/15','2026-07-15']
     ];
     var msBlock=MS.map(function(m){return m[0]+' '+m[1]+' · '+m[2]+' · '+cd(m[3]);}).join('\n');
     // —— 客户端三大卡点：依赖是否就绪 ——
@@ -1147,7 +1213,7 @@
     var depBlock=[dep('🎨','UI 设计图','设计交付总 Deadline'),dep('🧩','服务端接口依赖','服务端接口依赖')].join('\n');
     var L='━━━━━━━━━━━━━━';
     var msg=L
-      +'\n🦖 Dino English V1.3.2 进度日报'
+      +'\n🦖 Dino English V1.4.0 进度日报'
       +'\n📅 '+dstr+' · ⏳ '+dtext
       +'\n'+L
       +'\n\n🗓 里程碑（倒计时按今天算）\n'+msBlock
@@ -1157,7 +1223,8 @@
       +'\n\n🔗 客户端依赖就绪（卡住即停工）\n'+depBlock
       +'\n\n⏰ 前置 Deadline · 未完成 '+pend.length+' 项〔卡住=全盘延期〕\n'+preLines
       +'\n\n📋 开发进度 · '+FEATS.length+' 功能 × 双端\n'+devLines
-      +'\n\n'+L+'\n📎 详细排期见《V1.3.2 排期时间线》';
+      +'\n\n🧭 长期 App 需求（不跟版本）· '+LONGTERM.length+' 项\n'+LONGTERM.map(function(it,li){return '· '+it.n+'（'+it.own+'）〔'+getLTS(li)+'〕';}).join('\n')
+      +'\n\n'+L+'\n📎 详细排期见《V1.4.0 排期时间线》';
     document.getElementById('send-cmd-box').style.display='block';
     var ta=document.getElementById('send-cmd-text');ta.value=msg;ta.focus();ta.select();
     var hint=document.getElementById('send-hint');
@@ -1168,23 +1235,36 @@
   function renderAssign(){
     var iosPool=effectiveOrder(IOS_ORDER,'ios'),andPool=effectiveOrder(AND_ORDER,'and');
     var st=loadS(),rs=loadReasons();
-    var h='<div class="ahint">调整每个功能<b>各端</b>的<b>开发人员</b>、<b>开发状态</b>与<b>开始 / 提测时间</b>：人员从下拉「＋ 添加」选、点 ✕ 移除；<b>状态</b>直接在每端下拉里选（未开始 / UI开发中 / 联调中 / 已提测 / 验收中 / 完成 / 🚩阻塞，选「阻塞」可补原因），与「按人查看任务」、日报<b>实时同步</b>；开始 / 提测在每个端后面直接选日期（默认基线 7/6 起、7/7 提测；对话两项 7/7 起、7/8 提测）；<b>标题右侧</b>显示该功能<b>最终（较晚端）提测时间</b>与倒计时。状态按「功能 × 端」记录，<b>换人不丢状态</b>。</div>';
-    FEATS.forEach(function(f,i){
-      h+='<div class="afeat"><div class="afn"><span>'+(CN_F[i]||(i+1)+'.')+' '+f.n+'</span>'+titleMetaHTML(i)+'</div>';
-      [['ios','iOS',iosPool],['and','Android',andPool]].forEach(function(s){
-        var side=s[0],lbl=s[1],pool=s[2],cur=listOf(i,side);
-        var skey=(side==='ios'?'i':'a')+i,scur=st[skey]||'未开始';
-        h+='<div class="aside"><span class="asd '+side+'">'+lbl+'</span><div class="achips">';
-        if(cur.length===0)h+='<span class="achip none">未分配</span>';
-        cur.forEach(function(p){h+='<span class="achip">'+p+'<button class="achip-x" data-i="'+i+'" data-side="'+side+'" data-name="'+p.replace(/"/g,'&quot;')+'" title="移除">✕</button></span>';});
-        h+='</div><select class="aadd" data-i="'+i+'" data-side="'+side+'"><option value="">＋ 添加…</option>';
-        pool.filter(function(p){return cur.indexOf(p)<0;}).forEach(function(p){h+='<option value="'+p.replace(/"/g,'&quot;')+'">'+p+'</option>';});
-        h+='<option value="__other__">＋ 其他（手动输入）…</option></select>';
-        h+='<span class="adl">状态</span><select class="stsel '+SCLS[scur]+'" data-k="'+skey+'" title="开发状态（与「按人查看任务」同步）">'+opts(scur)+'</select>';
-        h+=dateCellsHTML(i,side);
-        if(scur==='🚩阻塞')h+='<input class="streason" data-rk="'+skey+'" value="'+(rs[skey]||'').replace(/"/g,'&quot;')+'" placeholder="阻塞原因…">';
+    var h='<div class="ahint">调整每个功能<b>各端</b>的<b>开发人员</b>、<b>开发状态</b>与<b>开始 / 提测时间</b>：人员从下拉「＋ 添加」选、点 ✕ 移除；<b>状态</b>直接在每端下拉里选（未开始 / UI开发中 / 联调中 / 已提测 / 验收中 / 完成 / 🚩阻塞，选「阻塞」可补原因），与「按人查看任务」、日报<b>实时同步</b>；开始 / 提测在每个端后面直接选日期（默认基线 7/9 起、7/11 提测；Push / 热点课 / 对话付费 / 埋点 7/9 起、7/12 补提测）；<b>标题右侧</b>显示该功能<b>最终（较晚端）提测时间</b>与倒计时。状态按「功能 × 端」记录，<b>换人不丢状态</b>。</div>';
+    CATS.forEach(function(cat){
+      var cs=catStats(cat,st);
+      h+='<div class="cat-head '+cat.cls+'"><span class="cat-head-n">'+cat.name+'　<small style="opacity:.85;font-weight:700">'+cat.idx.length+' 功能</small></span><span class="cat-head-r"><span class="cat-owner"><b>Owner</b> '+catOwnerSelectHTML(cat)+'</span><span class="cat-head-m">提测就绪 '+cs.ready+'/'+cs.total+' · 完成 '+cs.done+(cs.blocked?' · 🚩'+cs.blocked:'')+'</span></span></div>';
+      cat.idx.forEach(function(i){
+        var f=FEATS[i];
+        h+='<div class="afeat"><div class="afn"><span>'+(CN_F[i]||(i+1)+'.')+' '+f.n+'</span>'+titleMetaHTML(i)+'</div>';
+        [['ios','iOS',iosPool],['and','Android',andPool]].forEach(function(s){
+          var side=s[0],lbl=s[1],pool=s[2],cur=listOf(i,side);
+          var skey=(side==='ios'?'i':'a')+i,scur=st[skey]||'未开始';
+          h+='<div class="aside"><span class="asd '+side+'">'+lbl+'</span><div class="achips">';
+          if(cur.length===0)h+='<span class="achip none">未分配</span>';
+          cur.forEach(function(p){h+='<span class="achip">'+p+'<button class="achip-x" data-i="'+i+'" data-side="'+side+'" data-name="'+p.replace(/"/g,'&quot;')+'" title="移除">✕</button></span>';});
+          h+='</div><select class="aadd" data-i="'+i+'" data-side="'+side+'"><option value="">＋ 添加…</option>';
+          pool.filter(function(p){return cur.indexOf(p)<0;}).forEach(function(p){h+='<option value="'+p.replace(/"/g,'&quot;')+'">'+p+'</option>';});
+          h+='<option value="__other__">＋ 其他（手动输入）…</option></select>';
+          h+='<span class="adl">状态</span><select class="stsel '+SCLS[scur]+'" data-k="'+skey+'" title="开发状态（与「按人查看任务」同步）">'+opts(scur)+'</select>';
+          h+=dateCellsHTML(i,side);
+          if(scur==='🚩阻塞')h+='<input class="streason" data-rk="'+skey+'" value="'+(rs[skey]||'').replace(/"/g,'&quot;')+'" placeholder="阻塞原因…">';
+          h+='</div>';
+        });
         h+='</div>';
       });
+    });
+    // —— 长期 App 需求（不跟版本）作为看板独立大类：单状态、无 iOS/Android 拆分与提测日期，样式沿用版本任务卡（.afeat）——
+    h+='<div class="cat-head c-lt"><span class="cat-head-n">🧭 长期 App 需求（不跟版本）　<small style="opacity:.85;font-weight:700">'+LONGTERM.length+' 项 · 无提测节点</small></span><span class="cat-head-m">已启动 '+ltActiveCount()+' / '+LONGTERM.length+' · 持续推进</span></div>';
+    LONGTERM.forEach(function(it,li){
+      var s=getLTS(li);
+      h+='<div class="afeat"><div class="afn"><span>'+esc(it.n)+'</span><span class="afmeta"><span class="afowner"><b>Owner</b> '+esc(it.own)+'</span><span class="aftest">'+esc(it.tag)+' · 无提测</span></span></div>';
+      h+='<div class="aside"><span class="asd lt">长期</span><span class="adl">状态</span><select class="lt-stsel stsel '+LTSCLS[s]+'" data-li="'+li+'">'+ltOpts(s)+'</select><span class="lt-note">'+esc(it.note)+'</span></div>';
       h+='</div>';
     });
     document.getElementById('status-assign').innerHTML=h;
@@ -1202,14 +1282,18 @@
     for(var c=0;c<dts.length;c++){dts[c].onchange=function(){setDate(+this.getAttribute('data-i'),this.getAttribute('data-side'),this.getAttribute('data-kind'),this.value);renderAll();if(window.__DINO_RENDER_PRE)window.__DINO_RENDER_PRE();};}
     var os=document.querySelectorAll('#status-assign .afowner-sel');
     for(var d=0;d<os.length;d++){os[d].onchange=function(){setOwner(+this.getAttribute('data-i'),this.value);renderAll();};}
-    var ss=document.querySelectorAll('#status-assign .stsel');
+    var ss=document.querySelectorAll('#status-assign .afeat .stsel');
     for(var e=0;e<ss.length;e++){ss[e].onchange=function(){var o=loadS();o[this.getAttribute('data-k')]=this.value;saveS(o);renderAll();};}
+    var lss=document.querySelectorAll('#status-assign .lt-stsel');
+    for(var q=0;q<lss.length;q++){lss[q].onchange=function(){setLTS(+this.getAttribute('data-li'),this.value);renderAll();};}
     var rr=document.querySelectorAll('#status-assign .streason');
     for(var g=0;g<rr.length;g++){rr[g].addEventListener('change',function(){var r=loadReasons();r[this.getAttribute('data-rk')]=this.value;saveReasons(r);renderAll();});}
+    var cos=document.querySelectorAll('#status-assign .cat-owner-sel');
+    for(var k=0;k<cos.length;k++){cos[k].onchange=function(){setCatOwner(this.getAttribute('data-cls'),this.value);renderAll();};}
   }
   function renderAll(){renderStatus();renderAssign();renderPeopleSchedule();renderTodayTasks();}
   window.__DINO_RENDER_ALL=renderAll;
-  var TKEY='dino132_status_tab_v1';
+  var TKEY='dino140_status_tab_v1';
   function setTab(t){
     var person=t!=='feat';
     try{localStorage.setItem(TKEY,person?'person':'feat');}catch(e){}
@@ -1231,10 +1315,10 @@
     owner:'superClown',
     repo:'superClown.github.io',
     branch:'main',
-    paths:['index.html','dino-english/V1.3.2-schedule-readonly.html'],
-    pageUrl:'https://superclown.github.io/dino-english/V1.3.2-schedule-readonly.html'
+    paths:['index.html','dino-english/V1.4.0-schedule-readonly.html'],
+    pageUrl:'https://superclown.github.io/dino-english/V1.4.0-schedule-readonly.html'
   };
-  var TOKEN_KEY='dino132_publish_github_token_v1';
+  var TOKEN_KEY='dino140_publish_github_token_v1';
   var hint=document.getElementById('publish-hint');
   var publishBtn=document.getElementById('publish-github');
   var localCmdBtn=document.getElementById('publish-local-cmd');
@@ -1265,14 +1349,14 @@
     var state={};
     for(var i=0;i<localStorage.length;i++){
       var k=localStorage.key(i);
-      if(!k||k.indexOf('dino132_')!==0)continue;
-      if(k.indexOf('dino132_publish_')===0)continue;
+      if(!k||k.indexOf('dino140_')!==0)continue;
+      if(k.indexOf('dino140_publish_')===0)continue;
       state[k]=localStorage.getItem(k);
     }
-    state.dino132_collapsed_v1='[]';
-    state.dino132_status_tab_v1='feat';
-    if(!state.dino132_pre_done_v1)state.dino132_pre_done_v1='[]';
-    if(!state.dino132_status_reason_v1)state.dino132_status_reason_v1='{}';
+    state.dino140_collapsed_v1='[]';
+    state.dino140_status_tab_v1='feat';
+    if(!state.dino140_pre_done_v1)state.dino140_pre_done_v1='[]';
+    if(!state.dino140_status_reason_v1)state.dino140_status_reason_v1='{}';
     return state;
   }
   function publishedAt(){
@@ -1295,6 +1379,7 @@
       '  body.readonly #publish-hint{display:none !important;}',
       '  body.readonly .stsel,',
       '  body.readonly .afowner-sel,',
+      '  body.readonly .cat-owner-sel,',
       '  body.readonly input.adt,',
       '  body.readonly .streason{pointer-events:none;background:#f8fafc;color:#475569;cursor:default;}',
       '  body.readonly .achip{padding-right:11px;}',
@@ -1313,7 +1398,7 @@
       '    });',
       '  }catch(e){}',
       '  document.addEventListener("DOMContentLoaded",function(){',
-      '    document.querySelectorAll(".stsel,.afowner-sel,input.adt,.streason").forEach(function(el){el.disabled=true;});',
+      '    document.querySelectorAll(".stsel,.afowner-sel,.cat-owner-sel,input.adt,.streason").forEach(function(el){el.disabled=true;});',
       '  });',
       '})();'
     ].join('\n');
@@ -1325,7 +1410,7 @@
       if(window.__DINO_RENDER_ALL)window.__DINO_RENDER_ALL();
     }catch(e){}
     var clone=document.documentElement.cloneNode(true);
-    clone.querySelector('title').textContent='Dino English V1.3.2 排期时间线（只读发布版）';
+    clone.querySelector('title').textContent='Dino English V1.4.0 排期时间线（只读发布版）';
     clone.querySelector('body').classList.add('readonly');
     var head=clone.querySelector('head');
     if(head){
@@ -1356,7 +1441,7 @@
     boot.textContent=readonlyBootScript(collectPublishedState(),at);
     if(firstScript)firstScript.parentNode.insertBefore(boot,firstScript);
     else clone.querySelector('body').appendChild(boot);
-    clone.querySelectorAll('.stsel,.afowner-sel,input.adt,.streason').forEach(function(el){el.setAttribute('disabled','');});
+    clone.querySelectorAll('.stsel,.afowner-sel,.cat-owner-sel,input.adt,.streason').forEach(function(el){el.setAttribute('disabled','');});
     return '<!DOCTYPE html>\n'+clone.outerHTML;
   }
   function publishPreflight(){
@@ -1364,7 +1449,7 @@
       throw new Error('当前页面还没有 Owner 下拉框，请先刷新本地 HTML 页面后再发布。');
     }
     try{
-      if(!localStorage.getItem('dino132_feat_owner_v1')){
+      if(!localStorage.getItem('dino140_feat_owner_v1')){
         throw new Error('当前浏览器没有读取到 Owner 分配，请先在【按功能】里选择 Owner 后再发布。');
       }
     }catch(e){
@@ -1461,7 +1546,7 @@
   }
   if(localCmdBtn){
     localCmdBtn.onclick=async function(){
-      var cmd='cd "/Users/kaka/resources/htmls" && node "publish-dino-readonly-v132.mjs"';
+      var cmd='cd "/Users/kaka/resources/htmls" && node "publish-dino-readonly-v140.mjs"';
       try{
         await navigator.clipboard.writeText(cmd);
         setHint('已复制可靠发布命令：'+cmd,'ok');

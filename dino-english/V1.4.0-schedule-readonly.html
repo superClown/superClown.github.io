@@ -297,7 +297,7 @@
     <button type="button" class="publish-btn" id="publish-local-cmd">复制可靠发布命令</button>
     <span id="publish-hint">发布命令会基于磁盘源 HTML 生成，并校验 GitHub Pages 已返回本次发布内容</span>
   </div>
-  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-07-09 19:41。</div>
+  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-07-09 20:42。</div>
 
   <section id="today-section" class="collapsible">
     <h2>📌 今日事项 <span class="prog" id="today-prog"></span></h2>
@@ -492,8 +492,8 @@
 <script>
 (function(){
   window.__DINO_READONLY=true;
-  window.__DINO_PUBLISHED_AT="2026-07-09 19:41";
-  window.__DINO_PUBLISH_ID="1783597277822";
+  window.__DINO_PUBLISHED_AT="2026-07-09 20:42";
+  window.__DINO_PUBLISH_ID="1783600921448";
   var publishedState={
   "dino140_feat_owner_v1": "{\"3\":\"杨金鹏\",\"4\":\"杨金鹏\",\"6\":\"燕航\",\"10\":\"魏博源\"}",
   "dino140_collapsed_v1": "[]",
@@ -574,14 +574,18 @@
   }
   function serviceMatchInfo(name,test){
     var expected=md(test)+' 上午';
-    function todo(lark,note){return {cls:'info',tag:'待确认 · Lark 后端排期未匹配',lark:lark,date:'待排期',owner:'待确认',note:note+'；客户端要求 '+expected};}
-    if(name==='周卡限时折扣页 + 促销频控（挽留/每日启动）')return todo('本期新增，Lark「服务端任务管理」暂无匹配任务','后端下发划线倍数（当前1.5→划线价$16.49/33%OFF）+ 分触点频控字段 last_winback_ts / last_daily_offer_ts + is_member；「当日」按设备本地日判定');
-    if(name==='首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）')return todo('Vercel 付费引导 PRD（V3 MVP 卡片版）· 后端未在 Lark 建任务','后端注入会员态 + 24h 已推标记，解析 paid_guide_invite marker、写会话已推状态、扩展体验课卡下发接口带 Paywall 落点；对话引擎输出 marker + 中性引导语（5%灰度）');
-    if(name==='Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）')return todo('复用现有 Firebase；token 绑定/解绑与授权上报接口待后端确认','客户端上报 fcm_token / push_authorization_status / device_timezone；登录绑 token、登出清除该设备 token、多账号只推当前登录账号、多设备全量下发');
-    if(name==='Push 深链落地（三场景 + App活跃不弹系统横幅）')return todo('依赖 Push 服务端基建（分层判定 + 每小时跑批 + 深链 payload 路由）','三场景深链 payload（体验课 / 学习计划页 / Class tab）+ 每场景推送记录（累计次数上限；S3 带解锁批次标识判「未提醒过」）需后端约定');
-    if(name==='首页 Dino 任务引导条（6态状态机 + TTS播报/说话动效）')return todo('需后端提供状态位接口（启动/登录下发 + 进/切回 Dino tab 刷新）','下发 trial_started / trial_finished / is_member / 断点位置 / 是否存在已解锁·未完成正式课 / learner 名；断点续上后端已支持');
-    if(name==='热点课·首页 Banner + 落地页（三态/CMS 下发）')return todo('热点课 PRD · CMS 运营后台配置（免发版），Lark 后端排期未匹配','活动起止/三态一律服务端为准（防改本地时间绕过），Banner+落地页素材与配置由 CMS 下发；老版本按最低版本号不下发');
-    if(name==='热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report')return todo('热点课 PRD · 课件协议复用现有数字人课堂，Lark 后端排期未匹配','active theme course 判定、完课独立记账 event_lesson_completed、断点续上；E3 与周卡折扣页频控排他（折扣优先，频控满才推足球课弹窗）');
+    function vs(serverTest){
+      var late=serverTest>test;
+      return {cls:late?'bad':'ok',tag:'服务端 '+md(serverTest)+' 提测'+(late?' ⚠️ 晚于客户端':'')};
+    }
+    var v;
+    if(name==='周卡限时折扣页 + 促销频控（挽留/每日启动）'){v=vs('2026-07-13');return {cls:v.cls,tag:v.tag,lark:'「转化链路优化」下：Paywall挽留弹窗 / paywall相关 / 启动折扣弹窗接口',date:'7/13（paywall相关 14 号下班）',owner:'刘阳阳',note:'挽留 / 启动折扣 / 划线倍数·频控相关接口 07-13 提测，晚于客户端主提测——客户端 7/11–7/12 先按 mock 提、真接口 07-13+ 联调；划线倍数（1.5→$16.49/33%OFF）与 last_winback_ts / last_daily_offer_ts / is_member 字段与刘阳阳对齐；客户端要求 '+expected};}
+    if(name==='首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）'){v=vs('2026-07-16');return {cls:'bad',tags:[{text:'⚠️ 需求未明确',cls:'bad'},{text:v.tag}],tag:v.tag,lark:'「Dino 对话---付费弹窗引导」P1',date:'7/16 提测 · 计划上线 7/22',owner:'罗伟',note:'⚠️ 后端备注「需求还未明确（17 号在路上）」，07-16 提测 / 07-22 上线，明显晚于客户端 7/15——paid_guide_invite marker + 会员态/24h 注入本班车大概率不齐，需拍<b>降级或延后</b>；客户端要求 '+expected};}
+    if(name==='Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）'){v=vs('2026-07-13');return {cls:v.cls,tag:v.tag,lark:'「push通知相关」下：fireBase push 接入层抽象 + 设备绑定 + 解绑（开发完成 07-10）',date:'7/13',owner:'王槐宝',note:'FCM 接入层 + 设备 token 绑定/解绑 07-13 提测（开发完成 07-10），晚于客户端主提测；登录绑 token / 登出清除该设备 token / 多账号只推当前登录 与王槐宝对齐；客户端上报 fcm_token / push_authorization_status / device_timezone；客户端要求 '+expected};}
+    if(name==='Push 深链落地（三场景 + App活跃不弹系统横幅）'){v=vs('2026-07-13');return {cls:v.cls,tag:v.tag,lark:'「push通知相关」下：深链-路由约定 + 体验课召回 / 免费转化 / 会员新课（含本地化调度）+ 多语言模板配置',date:'7/13（会员新课 07-15 / 上线 07-17）',owner:'王槐宝',note:'深链 payload + 分层判定 + 每日批次调度 07-13 提测（会员新课逻辑 07-15 提测、计划上线 07-17）；13 号下班提测（王槐宝周末加班）；客户端 7/12 补提测先按 mock、07-13+ 联调；客户端要求 '+expected};}
+    if(name==='首页 Dino 任务引导条（6态状态机 + TTS播报/说话动效）'){v=vs('2026-07-13');return {cls:v.cls,tag:v.tag,lark:'「转化链路优化」下：首页 Dino 任务气泡引导--多种状态（开发完成 07-11）',date:'7/13（刘阳阳周六加班）',owner:'刘阳阳',note:'首页 Dino 多状态位接口 07-13 提测（13 号下班），晚于客户端主提测；trial_started / trial_finished / is_member / 断点位置 / 是否存在已解锁·未完成正式课 / learner 名 口径对齐；客户端要求 '+expected};}
+    if(name==='热点课·首页 Banner + 落地页（三态/CMS 下发）'){v=vs('2026-07-13');return {cls:v.cls,tags:[{text:'⚠️ 本次无 CMS',cls:'bad'},{text:v.tag}],tag:v.tag,lark:'「足球课相关」下：首页足球课入口(07-13) + 足球课详情+往期主题课(07-13) + 主题课活动配置(07-14)',date:'7/13–7/14（主流程 13 号全量提测）',owner:'赵腾',note:'⚠️ 后端明确「<b>本次没有 CMS，数据库配置-可简单测</b>」——落地页/Banner 走 DB 配置而非运营后台，产品需知配置改动仍要走后端；07-13~07-14 提测（赵腾周日加班）；活动起止/三态仍以服务端为准；客户端要求 '+expected};}
+    if(name==='热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report'){v=vs('2026-07-14');return {cls:v.cls,tag:v.tag,lark:'「世界杯足球课」课件：大纲处理+资源生成+资源替换(祁建泉) / 足球课prompt调整(翟亚南) / 皮肤手办课程绑定(赵腾·07-10)；E2/E3 挽留随「Paywall挽留弹窗」(刘阳阳)',date:'课件开发中 · 课程绑定 07-10',owner:'祁建泉 / 翟亚南 / 赵腾 / 刘阳阳',note:'课件（大纲/资源生成/prompt）开发中，皮肤手办课程绑定 07-10 提测；E2/E3 挽留弹窗随 Paywall 挽留(刘阳阳)一并，E3 与周卡折扣页频控排他；active theme course 判定随足球课入口下发；课中复用现有课堂加载课件；客户端要求 '+expected};}
     return null;
   }
   function refreshServicePres(){
@@ -674,8 +678,8 @@
       h+='<div class="svc-meta"><b>Lark对应：</b>'+svc.lark+'｜'+svc.note+'</div>';
       h+='</div>';
     });
-    h+='<div class="svc-card info"><div class="svc-top"><div class="svc-name">📋 服务端归属待确认（Lark「服务端任务管理」未匹配）</div><div class="svc-tags"><span class="svc-tag info">待 7/9 评审确认</span></div></div>';
-    h+='<div class="svc-meta"><b>本版服务端依赖尚未在 Lark 建/匹配任务</b>，需 7/9 评审后与后端确认归属与提测时间：<b>Push 基建</b>（分层判定 S1/S2/S3 + 每小时批次调度 + 多语言模板 + 深链 payload + 每场景推送记录）｜<b>促销频控</b>（划线倍数下发 + last_winback_ts / last_daily_offer_ts）｜<b>对话付费</b>（paid_guide_invite marker 解析 + 会员态 / 24h 注入）｜<b>首页 Dino 状态位接口</b>｜<b>世界杯 CMS</b>（活动配置免发版下发 + 三态 + active theme course 判定）｜<b>周解锁生效时刻归一本地日 00:00</b>（需后端评估）。热点课埋点研发对接 <b>王宁宁</b>（PRD 指定）。</div></div>';
+    h+='<div class="svc-card info"><div class="svc-top"><div class="svc-name">📋 服务端排期已匹配 Lark「服务端任务管理」· V2026-07-15</div><div class="svc-tags"><span class="svc-tag info">2026-07-09 同步</span></div></div>';
+    h+='<div class="svc-meta"><b>服务端普遍 07-13 提测（部分 07-14/07-15），晚于客户端 7/11–7/12 主 / 补提测</b>——客户端先按 mock 提、07-13+ 联调真接口。<b>两处硬风险需拍：</b>①「Dino 对话付费弹窗引导」（罗伟）需求还未明确、<b>07-16 提测 / 07-22 上线</b>，付费卡本班车大概率不齐，需拍降级或延后；②热点课「<b>本次没有 CMS，数据库配置</b>」，落地页 / Banner 走 DB 配置、无运营后台。其余：Push 基建（王槐宝·07-13，会员新课 07-15）｜折扣挽留 / 启动折扣（刘阳阳·07-13）｜首页 Dino 多状态位（刘阳阳·07-13）｜热点课入口 / 详情 / 配置（赵腾·07-13~14）｜服务端埋点 appsFlyer（罗伟·07-13）。周解锁生效时刻归一本地日 00:00 仍需与后端确认。</div></div>';
     return h;
   }
   function render(){

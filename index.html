@@ -285,7 +285,7 @@
 
   <h1>Dino English V1.4.0 排期时间线 · 客户端 + 服务端依赖</h1>
   <div class="sub">
-    <b>10 项客户端任务（转化链路 / Push / 首页 Dino 引导 / 对话付费 / 麦克风 / 热点课 / 埋点）· 7/11 晚主提测 / 7/12 补提测 / 7/13 提审 / 7/15 上线</b>｜7/9（今天）评审+拍板+全面开工｜功能性迭代版（V1.3.2 之上）｜iOS 5 / Android 7（新增 李永祺）｜<b>长期 App 需求（数字人 / 性能 / 重构 / 调研 等）见下方独立板块，不跟版本</b>｜淑怡 = 产品（对话付费）｜评估日 2026-07-09
+    <b>9 项客户端任务（转化链路 / Push / 首页 Dino 引导 / 对话付费 / 麦克风 / 热点课 / 埋点）· 7/11 晚主提测 / 7/12 补提测 / 7/13 提审 / 7/15 上线</b>｜7/9（今天）评审+拍板+全面开工｜功能性迭代版（V1.3.2 之上）｜iOS 5 / Android 7（新增 李永祺）｜<b>长期 App 需求（数字人 / 性能 / 重构 / 调研 等）见下方独立板块，不跟版本</b>｜淑怡 = 产品（对话付费）｜评估日 2026-07-09
   </div>
   <div class="top-actions">
     <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/CMQLw7imeiIemykJmTgj0cKIpjb" target="_blank" rel="noopener noreferrer">主 PRD（转化/Push/首页Dino）</a>
@@ -293,11 +293,13 @@
     <a class="doc-btn" href="https://dino-prd-hub.vercel.app/paid/" target="_blank" rel="noopener noreferrer">对话付费引导 PRD</a>
     <a class="doc-btn" href="https://dino-prd-hub.vercel.app/mic/" target="_blank" rel="noopener noreferrer">麦克风改造 PRD</a>
     <a class="doc-btn" href="https://cyanlee888.github.io/cyan/dino-english/V1.4.0-ui-demo.html" target="_blank" rel="noopener noreferrer">产品 Demo</a>
+    <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/P5uVwILRjioftykoWRdjvJ9Apgb" target="_blank" rel="noopener noreferrer">接口文档</a>
+    <a class="doc-btn" href="https://qjphu5vphyf4.jp.larksuite.com/wiki/JuBfwUEX6ih9IOkJW7GjhgBBpbf?table=tblMmuu7npNpcv9P&view=vewYljaxwJ" target="_blank" rel="noopener noreferrer">服务端任务排期</a>
     <button type="button" class="publish-btn secondary" id="publish-token">设置 GitHub Token</button>
     <button type="button" class="publish-btn" id="publish-local-cmd">复制可靠发布命令</button>
     <span id="publish-hint">发布命令会基于磁盘源 HTML 生成，并校验 GitHub Pages 已返回本次发布内容</span>
   </div>
-  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-07-09 20:42。</div>
+  <div class="readonly-note"><b>只读发布版</b>：数据已从本机 Chrome 的 localStorage 固化，线上访问者只能查看，不能修改排期。数据快照：2026-07-10 15:52。</div>
 
   <section id="today-section" class="collapsible">
     <h2>📌 今日事项 <span class="prog" id="today-prog"></span></h2>
@@ -345,8 +347,8 @@
       <div class="qa-card dino">
         <h3>转化链路 / Paywall / 折扣挽留</h3>
         <span class="qa-owner">Owner：孙晶（sunjing15）</span>
-        <div class="qa-scope">常规 Paywall 收敛为年+月（周卡不出）；周卡限时折扣页全触点（支付取消 / 返回关闭 Paywall / 每日启动）、15:00 本地倒计时（退后台照常）、划线价 $16.49 / 现价 $10.99 / 33% OFF 折算、Claim/Restore/✕；全局促销频控（挽留与每日启动各每日 1 次互不占用、会员不打扰、当日去重）；支付失败≠取消不进折扣页</div>
-        <div class="qa-map">映射：常规 Paywall 收敛、周卡限时折扣页 + 促销频控、对话上限触点</div>
+        <div class="qa-scope">周卡限时折扣页全触点（支付取消 / 返回关闭 Paywall / 每日启动）、15:00 本地倒计时（退后台照常）、划线价 $16.49 / 现价 $10.99 / 33% OFF 折算、Claim/Restore/✕；全局促销频控（挽留与每日启动各每日 1 次互不占用、会员不打扰、当日去重）；支付失败≠取消不进折扣页</div>
+        <div class="qa-map">映射：周卡限时折扣页 + 促销频控、对话上限触点</div>
       </div>
       <div class="qa-card account">
         <h3>Push 推送 / 授权 / 深链</h3>
@@ -399,9 +401,9 @@
 
   <!-- ============ 功能可达性小结 ============ -->
   <section>
-    <h2>① 客户端可达性 <span class="tag">7/15 上线 · 10 项客户端任务（长期 App 需求见下方独立板块）</span></h2>
+    <h2>① 客户端可达性 <span class="tag">7/15 上线 · 9 项客户端任务（长期 App 需求见下方独立板块）</span></h2>
     <div class="reach">
-      <div class="rrow"><span class="pill ok">🟢 2 项</span><div><b>稳</b>：常规 Paywall 收敛年+月（纯客户端、复用 V1.3.2 版式、免联调）、麦克风交互改造（纯交互层、无新视觉稿、后端仅确认音频接口兼容）</div></div>
+      <div class="rrow"><span class="pill ok">🟢 1 项</span><div><b>稳</b>：麦克风交互改造（纯交互层、无新视觉稿、后端仅确认音频接口兼容）</div></div>
       <div class="rrow"><span class="pill warn">🟡 5 项</span><div><b>争取（依赖到位就能上车）</b>：周卡限时折扣页 + 促销频控（客户端框架复用 <code>pro_weekly</code>，需后端下发划线倍数 + 频控字段）、首页对话付费引导卡（复用体验课卡，需对话引擎输出 marker + 后端注入会员态/24h）、Push SDK 接入（复用 Firebase，token 绑定/解绑+授权上报接口待定）、首页 Dino 任务引导条（复用现有首页 + TTS 能力，需状态位接口）、全链路埋点（需口径终稿 + 各功能自埋）</div></div>
       <div class="rrow"><span class="pill no">🔴 3 项</span><div><b>真瓶颈</b>：<b>热点课·Banner+落地页</b> 与 <b>热点课·挽留弹窗+课中</b>（P0 双项，依赖 <b>CMS 运营后台 + 课件资源 + 服务端三态下发</b>，6 天窗口极紧）；<b>Push 深链落地</b>（依赖 Push 服务端基建：分层判定 + 每小时跑批 + 多语言模板 + payload 路由，服务端 <b>7/12 才提测</b>）</div></div>
     </div>
@@ -430,7 +432,7 @@
       <b>🔗 联调安排</b>（设计/接口最晚 7/11 上午到，联调 7/11–7/12，赶 7/11 晚主提测；Push 基建 / 热点课 CMS 偏晚，压 7/12 补提测）：<br>
       · <b>与服务端（7 项）</b> — 周卡折扣页+频控（划线倍数+<code>last_winback_ts</code>/<code>last_daily_offer_ts</code>）、对话付费卡（<code>paid_guide_invite</code> marker + 会员态/24h 注入）、Push SDK 接入（token 绑定·解绑 + 授权上报）、Push 深链（三场景 payload + 每小时批次调度）、首页 Dino 引导条（<b>状态位接口</b>：trial_started/finished、is_member、断点、可上正式课）、热点课 Banner+落地页（<b>CMS 三态下发</b>）、热点课弹窗+课中（active theme course 判定 + 课件下发）<br>
       · <b>Push / 热点课 偏晚</b> — Push 服务端基建与热点课 CMS 预计 <b>7/12 才提测</b>，对应客户端两条 Push + 两条热点课压 <b>7/12 补提测</b><br>
-      · <b>其余免联调（纯客户端）</b> — ✅ 常规 Paywall 收敛、麦克风改造
+      · <b>其余免联调（纯客户端）</b> — ✅ 麦克风改造
     </div>
   </section>
 
@@ -438,7 +440,7 @@
   <section>
     <h2>③ 人员排期（建议分工 · 延续 V1.3.2 原班 + Android 新增 李永祺） <span class="tag">条色：蓝=🟢 / 黄=重点 / 红=关键路径 / 青=联调</span></h2>
     <div class="teaminfo">
-      开发窗 7/9–7/11 三天（Push / 热点课 / 对话付费 / 埋点到 7/12）。<b>付玉佳 / 郭浦然</b>：Paywall 收敛 + 周卡折扣页+频控（挽留/每日启动）≈2.5d；<b>燕航 / 郭武鑫</b>：对话付费卡 + 首页 Dino 6 态引导条（含 TTS 播报动效）≈3d；<b>王宁宁 / 杨金鹏</b>：Push SDK 接入（token 绑定·解绑/授权/时区）+ 深链落地 ≈3d（<b>王宁宁统筹 Push 埋点</b>）；<b>刘亚平 / 李政</b>：麦克风改造 + 全链路埋点 ≈2.5d；<b>贾宾 / 魏博源 / 沈延涛·李永祺</b>：<b>🔴 热点课 P0</b>（Banner+落地页 + 弹窗/课中/Report）双端各 ≈3d，依赖 CMS+课件 7/11，最紧。<b>崩溃、性能、数字人、课中 native 重构、KMP 调研等已移入下方「长期 App 开发需求」板块</b>（不跟版本、与本班车共用人力）。分工在看板「按大类·功能」Tab 可改，此处自动跟随。
+      开发窗 7/9–7/11 三天（Push / 热点课 / 对话付费 / 埋点到 7/12）。<b>付玉佳 / 郭浦然</b>：周卡折扣页+频控（挽留/每日启动）≈2.5d；<b>燕航 / 郭武鑫</b>：对话付费卡 + 首页 Dino 6 态引导条（含 TTS 播报动效）≈3d；<b>王宁宁 / 杨金鹏</b>：Push SDK 接入（token 绑定·解绑/授权/时区）+ 深链落地 ≈3d（<b>王宁宁统筹 Push 埋点</b>）；<b>刘亚平 / 李政</b>：麦克风改造 + 全链路埋点 ≈2.5d；<b>贾宾 / 魏博源 / 沈延涛·李永祺</b>：<b>🔴 热点课 P0</b>（Banner+落地页 + 弹窗/课中/Report）双端各 ≈3d，依赖 CMS+课件 7/11，最紧。<b>崩溃、性能、数字人、课中 native 重构、KMP 调研等已移入下方「长期 App 开发需求」板块</b>（不跟版本、与本班车共用人力）。分工在看板「按大类·功能」Tab 可改，此处自动跟随。
     </div>
     <div id="people-schedule"></div>
     <div id="people-schedule-static" style="display:none;">
@@ -475,35 +477,38 @@
   <section>
     <h2>⑤ 待 manager / 产品拍板（7/9 评审会一次清）</h2>
     <table class="f">
-      <tr><td>1</td><td><b>7/15 上线怎么成立？</b> 10 项客户端任务压 7/9–7/11 三天开发窗，其中 <b>热点课 P0 双项</b>（Banner+落地页 / 弹窗+课中）强依赖 CMS 运营后台 + 课件资源 + 服务端三态——今天必须拍「<b>CMS 与课件 7/11 能否就位</b>」，否则热点课砍出本班车、活动顺延（Banner 走无 active theme course 不占位兜底）。</td></tr>
+      <tr><td>1</td><td><b>7/15 上线怎么成立？</b> 9 项客户端任务压 7/9–7/11 三天开发窗，其中 <b>热点课 P0 双项</b>（Banner+落地页 / 弹窗+课中）强依赖 CMS 运营后台 + 课件资源 + 服务端三态——今天必须拍「<b>CMS 与课件 7/11 能否就位</b>」，否则热点课砍出本班车、活动顺延（Banner 走无 active theme course 不占位兜底）。</td></tr>
       <tr><td>2</td><td><b>长期 App 需求怎么启动？</b> 数字人 + Lottie 优化 + 资源产出平台（<b>需先与晓宇沟通方案</b>）、App 性能专项、课中 native 重构、KMP 调研、UI / 自动化测试 skill——均<b>不跟版本</b>，见下方「长期 App 开发需求」板块，今天确认各项 Owner 与启动节奏。</td></tr>
       <tr><td>3</td><td><b>划线原价倍数 X=1.5 终值？</b>（当前 → 划线价 $16.49 / 33% OFF）客户端写死还是<b>服务端可配下发</b>；促销频控字段（<code>last_winback_ts</code>/<code>last_daily_offer_ts</code>/<code>is_member</code>）后端归属与提测时间。</td></tr>
       <tr><td>4</td><td><b>对话付费卡触发轮数 N=6 与灰度 5%？</b> <code>paid_guide_invite</code> marker、会员态/24h 冷却注入由对话引擎+后端落地（淑怡产品口径），与「对话上限触点」互不占额度——今天确认后端是否本期建任务。</td></tr>
       <tr><td>5</td><td><b>Push 授权与调度口径？</b> 启动即请求授权、device_timezone 晚间 18:00 批次（可配）、S3 周解锁生效时刻归一本地日 00:00（需后端评估）；<b>App 活跃时不弹系统横幅</b>的前台处理口径确认；登录绑 token / 登出解绑 / 多账号多设备触达规则。</td></tr>
       <tr><td>6</td><td><b>埋点是否本期全量加？</b> 麦克风达标线（成功率≥95% / 超短≤5%）、Push/Paywall/首页引导/热点课 事件与参数口径 ≤7/10 定；热点课埋点研发对接 <b>王宁宁</b>（PRD 指定）。</td></tr>
     </table>
-    <div class="info" style="margin-top:12px"><b>结论</b>：10 项客户端任务 = 🟢2 稳 + 🟡5 争取 + 🔴3 瓶颈（热点课双项 + Push 深链）。7/15 上线是<b>极限压缩班车</b>，三个硬条件今天闭环才成立：<b>①热点课 CMS + 课件 7/11 就位（否则砍车顺延）；②Push 服务端基建 7/12 可联调；③设计首批 7/9 晚出、其余 ≤7/11</b>。Push / 热点课 / 对话付费 / 埋点按 7/12 补提测单独跟。<b>长期 App 需求（数字人 / 性能 / 重构 / 调研等）不跟版本，见下方独立板块。</b>
+    <div class="info" style="margin-top:12px"><b>结论</b>：9 项客户端任务 = 🟢1 稳 + 🟡5 争取 + 🔴3 瓶颈（热点课双项 + Push 深链）。7/15 上线是<b>极限压缩班车</b>，三个硬条件今天闭环才成立：<b>①热点课 CMS + 课件 7/11 就位（否则砍车顺延）；②Push 服务端基建 7/12 可联调；③设计首批 7/9 晚出、其余 ≤7/11</b>。Push / 热点课 / 对话付费 / 埋点按 7/12 补提测单独跟。<b>长期 App 需求（数字人 / 性能 / 重构 / 调研等）不跟版本，见下方独立板块。</b>
     </div>
   </section>
 
-  <footer>Dino English V1.4.0 · 10 项客户端任务 · 7/11 晚主提测 / 7/12 补提测 / 7/13 提审 / 7/15 上线 · AI Coding 工时口径 · 生成于 2026-07-09 · 长期 App 需求（数字人 / 性能 / 重构 / 调研等）不跟版本独立列 · 服务端接口依赖待与 Lark「服务端任务管理」匹配</footer>
+  <footer>Dino English V1.4.0 · 9 项客户端任务 · 7/11 晚主提测 / 7/12 补提测 / 7/13 提审 / 7/15 上线 · AI Coding 工时口径 · 生成于 2026-07-09 · 长期 App 需求（数字人 / 性能 / 重构 / 调研等）不跟版本独立列 · 服务端接口依赖待与 Lark「服务端任务管理」匹配</footer>
 
 </div>
 <script>
 (function(){
   window.__DINO_READONLY=true;
-  window.__DINO_PUBLISHED_AT="2026-07-09 20:42";
-  window.__DINO_PUBLISH_ID="1783600921448";
+  window.__DINO_PUBLISHED_AT="2026-07-10 15:52";
+  window.__DINO_PUBLISH_ID="1783669978796";
   var publishedState={
   "dino140_feat_owner_v1": "{\"3\":\"杨金鹏\",\"4\":\"杨金鹏\",\"6\":\"燕航\",\"10\":\"魏博源\"}",
+  "dino140_feat_owner_v2": "{\"6\":\"李永祺\"}",
   "dino140_collapsed_v1": "[]",
-  "dino140_cat_owner_v1": "{\"c-paywall\":\"沈延涛\",\"c-push\":\"杨金鹏\",\"c-dino\":\"郭武鑫\",\"c-theme\":\"付玉佳\"}",
+  "dino140_cat_owner_v1": "{\"c-paywall\":\"沈延涛\",\"c-push\":\"杨金鹏\",\"c-dino\":\"郭武鑫\",\"c-theme\":\"付玉佳\",\"c-other\":\"李政\"}",
+  "dino140_feat_date_v3": "{\"0\":{\"ios\":{\"test\":\"2026-07-12\"},\"and\":{\"test\":\"2026-07-12\"}},\"1\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-12\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-12\"}},\"2\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-12\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-12\"}},\"3\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"}},\"4\":{\"ios\":{\"test\":\"2026-07-12\"},\"and\":{\"test\":\"2026-07-12\"}},\"5\":{\"ios\":{\"test\":\"2026-07-14\"},\"and\":{\"test\":\"2026-07-14\"}},\"6\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-12\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-12\"}},\"7\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-12\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-12\"}},\"8\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-14\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-14\"}}}",
   "dino140_feat_date_v2": "{\"0\":{\"ios\":{\"test\":\"2026-07-13\"},\"and\":{\"test\":\"2026-07-13\"}},\"1\":{\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"},\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"}},\"2\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"}},\"3\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-13\"}},\"4\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"}},\"5\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"}},\"6\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"}},\"7\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"}},\"8\":{\"ios\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"},\"and\":{\"start\":\"2026-07-09\",\"test\":\"2026-07-13\"}},\"9\":{\"ios\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"},\"and\":{\"start\":\"2026-07-10\",\"test\":\"2026-07-14\"}},\"10\":{\"ios\":{\"test\":\"2026-07-14\"},\"and\":{\"test\":\"2026-07-14\"}}}",
   "dino140_feat_assign_v1": "{\"0\":{\"ios\":\"付玉佳\",\"and\":\"沈延涛\"},\"1\":{\"ios\":\"付玉佳\",\"and\":\"沈延涛\"},\"6\":{\"ios\":\"贾宾\",\"and\":\"魏博源\"},\"7\":{\"ios\":\"付玉佳·刘亚平\",\"and\":\"郭浦然·李政·李永祺\"},\"8\":{\"ios\":\"付玉佳·刘亚平\",\"and\":\"郭浦然·李政\"},\"9\":{\"ios\":\"刘亚平·王宁宁\",\"and\":\"李政·杨金鹏\"},\"10\":{\"and\":\"郭浦然\"}}",
   "dino140_status_tab_v1": "feat",
+  "dino140_feat_assign_v2": "{\"0\":{\"and\":\"沈延涛\"},\"2\":{\"and\":\"杨金鹏\"},\"3\":{\"and\":\"杨金鹏\"},\"5\":{\"ios\":\"贾宾\",\"and\":\"魏博源\"},\"6\":{\"ios\":\"付玉佳\",\"and\":\"郭浦然·魏博源\"},\"7\":{\"ios\":\"刘亚平·付玉佳\",\"and\":\"郭浦然·李政\"},\"8\":{\"ios\":\"刘亚平·王宁宁\",\"and\":\"李政·杨金鹏\"}}",
   "dino140_pre_done_v1": "[]",
   "dino140_early_done_v1": "[]",
-  "dino140_status_reason_v1": "{}"
+  "dino140_status_reason_v2": "{}"
 };
   try{
     Object.keys(publishedState).forEach(function(key){
@@ -538,7 +543,6 @@
   window.__DINO_PRES=PRES;
   var KEY='dino140_pre_done_v1';
   var PRE_FEATS=[
-    '常规 Paywall 收敛（年+月）',
     '周卡限时折扣页 + 促销频控（挽留/每日启动）',
     '首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）',
     'Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）',
@@ -549,13 +553,13 @@
     '热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report',
     '全链路埋点（Push/Paywall/首页引导/麦克风/热点课）'
   ];
-  var PRE_DKEY='dino140_feat_date_v2';
+  var PRE_DKEY='dino140_feat_date_v3';
   var PRE_DDFLT={test:'2026-07-11'};
   (function seedChatDates(){try{
-    var k='dino140_feat_date_v2';
+    var k='dino140_feat_date_v3';
     if(!localStorage.getItem(k)){
       var late={ios:{start:'2026-07-09',test:'2026-07-12'},and:{start:'2026-07-09',test:'2026-07-12'}};
-      localStorage.setItem(k,JSON.stringify({2:late,3:late,4:late,7:late,8:late,9:late}));
+      localStorage.setItem(k,JSON.stringify({1:late,2:late,3:late,6:late,7:late,8:late}));
     }
   }catch(e){}})();
   function loadDone(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
@@ -789,7 +793,6 @@
   }
   // (V1.4.0：无历史姓名迁移)
   var FEATS=[
-    {n:'常规 Paywall 收敛（年+月）', ios:'付玉佳', and:'郭浦然'},
     {n:'周卡限时折扣页 + 促销频控（挽留/每日启动）', ios:'付玉佳', and:'郭浦然'},
     {n:'首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）', ios:'燕航', and:'郭武鑫'},
     {n:'Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）', ios:'王宁宁', and:'杨金鹏'},
@@ -800,13 +803,13 @@
     {n:'热点课·挽留弹窗(E2/E3) + 课中加载课件 + 完课 Report', ios:'贾宾', and:'沈延涛·李永祺'},
     {n:'全链路埋点（Push/Paywall/首页引导/麦克风/热点课）', ios:'刘亚平', and:'李政'}
   ];
-  // —— 大类分组：把 11 个功能归到 5 个大类；idx 为 FEATS 下标，编号（①②…）仍沿用 FEATS 原顺序 ——
+  // —— 大类分组：把 9 个功能归到 5 个大类；idx 为 FEATS 下标，编号（①②…）仍沿用 FEATS 原顺序 ——
   var CATS=[
-    {name:'转化链路 · Paywall', cls:'c-paywall', idx:[0,1]},
-    {name:'首页 Dino · 对话',   cls:'c-dino',    idx:[2,5,6]},
-    {name:'推送 Push',          cls:'c-push',    idx:[3,4]},
-    {name:'热点课 · 世界杯',    cls:'c-theme',   idx:[7,8]},
-    {name:'埋点',               cls:'c-other',   idx:[9]}
+    {name:'转化链路 · Paywall', cls:'c-paywall', idx:[0]},
+    {name:'首页 Dino · 对话',   cls:'c-dino',    idx:[1,4,5]},
+    {name:'推送 Push',          cls:'c-push',    idx:[2,3]},
+    {name:'热点课 · 世界杯',    cls:'c-theme',   idx:[6,7]},
+    {name:'埋点',               cls:'c-other',   idx:[8]}
   ];
   function catStats(cat,st){
     var total=cat.idx.length*2,done=0,ready=0,blocked=0,notstart=0;
@@ -841,7 +844,7 @@
     pool.forEach(function(p){h+='<option value="'+p.replace(/"/g,'&quot;')+'"'+(p===cur?' selected':'')+'>'+p+'</option>';});
     return h+'</select>';
   }
-  // —— 长期 App 开发需求（不跟版本）：开发进度看板里的独立大类；无提测节点、单状态、不进版本 20 端次统计与人员甘特 ——
+  // —— 长期 App 开发需求（不跟版本）：开发进度看板里的独立大类；无提测节点、单状态、不进版本 18 端次统计与人员甘特 ——
   var LONGTERM=[
     {n:'数字人 + 现有 Lottie 优化 + 资源产出平台 + 完整产出流程', own:'贾宾 · 沈延涛', tag:'平台/资源', tcls:'plat', note:'需先与晓宇沟通数字人方案；含现有 Lottie 优化、资源产出平台与完整产出流程打通'},
     {n:'UI skill 持续优化', own:'李永祺', tag:'效能', tcls:'eff', note:'UI 生成 / 还原 skill 持续打磨，提升 UI 开发效率与一致性'},
@@ -862,10 +865,10 @@
   function ltOpts(cur){var h='';LT_STATES.forEach(function(s){h+='<option value="'+s+'"'+(s===cur?' selected':'')+'>'+s+'</option>';});return h;}
   var STATES=['未开始','UI开发中','联调中','已提测','验收中','完成','🚩阻塞'];
   var SCLS={'未开始':'s0','UI开发中':'s1','联调中':'s2','已提测':'s3','验收中':'s4','完成':'s5','🚩阻塞':'sx'};
-  var SKEY='dino140_status_v1';
+  var SKEY='dino140_status_v2';
   function loadS(){try{return JSON.parse(localStorage.getItem(SKEY)||'{}');}catch(e){return{};}}
   function saveS(o){try{localStorage.setItem(SKEY,JSON.stringify(o));}catch(e){}}
-  var SRKEY='dino140_status_reason_v1';
+  var SRKEY='dino140_status_reason_v2';
   function loadReasons(){try{return JSON.parse(localStorage.getItem(SRKEY)||'{}');}catch(e){return{};}}
   function saveReasons(o){try{localStorage.setItem(SRKEY,JSON.stringify(o));}catch(e){}}
   function opts(cur){var h='';STATES.forEach(function(s){h+='<option value="'+s+'"'+(s===cur?' selected':'')+'>'+s+'</option>';});return h;}
@@ -873,7 +876,7 @@
   var AND_ORDER=['魏博源','杨金鹏','郭浦然','郭武鑫','沈延涛','李政','李永祺'];
   var PCT={};
   // —— 开发人员分工：可在「按功能」Tab 变更，「按人」Tab 与日报自动跟随。状态按「功能×端」记录，换人不丢状态 ——
-  var AKEY='dino140_feat_assign_v1';
+  var AKEY='dino140_feat_assign_v2';
   function loadA(){try{return JSON.parse(localStorage.getItem(AKEY)||'{}');}catch(e){return{};}}
   function saveA(o){try{localStorage.setItem(AKEY,JSON.stringify(o));}catch(e){}}
   function getAssign(i,side){var ov=loadA();if(ov[i]&&typeof ov[i][side]==='string')return ov[i][side];return FEATS[i][side]||'';}
@@ -882,7 +885,7 @@
   function addPerson(i,side,name){name=(name||'').replace(/\s+/g,'');if(!name)return;var l=listOf(i,side);if(l.indexOf(name)<0){l.push(name);setAssign(i,side,l.join('·'));}}
   function removePerson(i,side,name){setAssign(i,side,listOf(i,side).filter(function(p){return p!==name;}).join('·'));}
   function effectiveOrder(baseOrder,side){var seen={},out=[];baseOrder.forEach(function(p){if(!seen[p]){seen[p]=1;out.push(p);}});FEATS.forEach(function(f,i){listOf(i,side).forEach(function(p){if(!seen[p]){seen[p]=1;out.push(p);}});});return out;}
-  var OKEY='dino140_feat_owner_v1';
+  var OKEY='dino140_feat_owner_v2';
   function loadO(){try{return JSON.parse(localStorage.getItem(OKEY)||'{}');}catch(e){return{};}}
   function saveO(o){try{localStorage.setItem(OKEY,JSON.stringify(o));}catch(e){}}
   function ownerPool(i){
@@ -900,7 +903,7 @@
   }
   function setOwner(i,val){var ov=loadO();if(val)ov[i]=val;else delete ov[i];saveO(ov);}
   // —— 每个功能「各端」的开始 / 提测时间（在「按功能」Tab 维护，存本机；默认基线 7/9 起、7/11 提测；Push / 热点课 / 对话付费 / 埋点 已种子为 7/9 起、7/12 补提测）——
-  var DKEY='dino140_feat_date_v2';
+  var DKEY='dino140_feat_date_v3';
   var DDFLT={start:'2026-07-09',test:'2026-07-11'};
   function loadDt(){try{return JSON.parse(localStorage.getItem(DKEY)||'{}');}catch(e){return{};}}
   function saveDt(o){try{localStorage.setItem(DKEY,JSON.stringify(o));}catch(e){}}
@@ -933,8 +936,7 @@
     return today.getFullYear()+'-'+('0'+(today.getMonth()+1)).slice(-2)+'-'+('0'+today.getDate()).slice(-2);
   }
   function shortName(n){
-    return n.replace('常规 Paywall 收敛（年+月）','Paywall收敛')
-      .replace('周卡限时折扣页 + 促销频控（挽留/每日启动）','折扣页+频控')
+    return n.replace('周卡限时折扣页 + 促销频控（挽留/每日启动）','折扣页+频控')
       .replace('首页对话付费引导卡（MVP·非会员≥6轮 + 对话上限触点）','对话付费卡')
       .replace('Push SDK 接入（FCM/APNs·token 绑定/解绑·授权·时区上报）','Push接入')
       .replace('Push 深链落地（三场景 + App活跃不弹系统横幅）','Push深链')
@@ -1360,7 +1362,7 @@
     state.dino140_collapsed_v1='[]';
     state.dino140_status_tab_v1='feat';
     if(!state.dino140_pre_done_v1)state.dino140_pre_done_v1='[]';
-    if(!state.dino140_status_reason_v1)state.dino140_status_reason_v1='{}';
+    if(!state.dino140_status_reason_v2)state.dino140_status_reason_v2='{}';
     return state;
   }
   function publishedAt(){
@@ -1453,7 +1455,7 @@
       throw new Error('当前页面还没有 Owner 下拉框，请先刷新本地 HTML 页面后再发布。');
     }
     try{
-      if(!localStorage.getItem('dino140_feat_owner_v1')){
+      if(!localStorage.getItem('dino140_feat_owner_v2')){
         throw new Error('当前浏览器没有读取到 Owner 分配，请先在【按功能】里选择 Owner 后再发布。');
       }
     }catch(e){
@@ -1550,7 +1552,7 @@
   }
   if(localCmdBtn){
     localCmdBtn.onclick=async function(){
-      var cmd='cd "/Users/kaka/resources/htmls" && node "publish-dino-readonly-v140.mjs"';
+      var cmd='cd "/Users/kaka/resources/htmls/1.4.0" && node "publish-dino-readonly-v140.mjs"';
       try{
         await navigator.clipboard.writeText(cmd);
         setHint('已复制可靠发布命令：'+cmd,'ok');
